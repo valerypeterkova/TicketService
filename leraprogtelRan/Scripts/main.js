@@ -1,5 +1,4 @@
 var arr = ["#menu",
-    "#menu-icon-btn",
     "#drop-select-option",
     "#second1",
     "#second",
@@ -10,9 +9,19 @@ var arr = ["#menu",
 function showView(elem) {
     for(i = 0; i < arr.length; i++){
         if(arr[i] == elem){
-            $(elem).css({"display":"block"});
+            $(arr[i]).css({"display":"block"});
         }else{
-            $(elem).css({"display":"none"});
+            $(arr[i]).css({"display":"none"});
+        }
+    }
+}
+
+function showViews(elems) {
+    for(i = 0; i < arr.length; i++){
+        if(elems.includes(arr[i])){
+            $(arr[i]).css({"display":"block"});
+        }else{
+            $(arr[i]).css({"display":"none"});
         }
     }
 }
@@ -49,24 +58,17 @@ $("#drop-select").on("click", function () {
 
 
 $(".img-ev").on("click",function () {
-    $("#second1").css({"display":"block"});
-    $("#second").css({"display": "none"});
+    showView("#second1");
 
 });
 $("#logo1").on("click",function () {
-    $("#second1").css({"display":"none"});
-    $("#second").css({"display": "block"});
-    $("#events").css({"display":"block"});
-    $("#registration").css({"display": "none"});
-    $("#registration1").css({"display":"none"});
+    showViews(["#second", "#events"]);
 });
 
 
 
 function loginPage() {
-    $("#events").css({"display":"none"});
-    $("#registration").css({"display": "block"});
-    $("#registration1").css({"display":"none"});
+    showView("#registration");
 }
 
 function menuClose() {
@@ -81,14 +83,12 @@ $("#loginout-btn-menu").on("click", function () {
 });
 
 $("#events-btn-menu").on("click", function () {
-    $("#events").css({"display":"block"});
-    $("#registration").css({"display": "none"});
+    showViews(["#events", "#second"]);
     menuClose();
 });
 
 $("#new-reg-btn1").on("click",function () {
-    $("#registration1").css({"display":"block"});
-    $("#registration").css({"display": "none"});
+    showView("#registration1");
 });
 
 
