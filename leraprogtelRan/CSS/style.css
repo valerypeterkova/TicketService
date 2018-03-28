@@ -629,12 +629,10 @@ input, button{
 
 #txt-menu li{
     padding-bottom: 0.5vw;
-}
-
-#txt-menu a{
-    text-decoration: none;
+    cursor: pointer;
     color: #fefefe;
 }
+
 
 @media screen and (max-width: 769px) {
     #img-logo, .row{

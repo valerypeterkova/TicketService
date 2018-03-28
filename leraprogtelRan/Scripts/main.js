@@ -1,3 +1,21 @@
+var arr = ["#menu",
+    "#menu-icon-btn",
+    "#drop-select-option",
+    "#second1",
+    "#second",
+    "#events",
+    "#registration",
+    "#registration1"];
+
+function showView(elem) {
+    for(i = 0; i < arr.length; i++){
+        if(arr[i] == elem){
+            $(elem).css({"display":"block"});
+        }else{
+            $(elem).css({"display":"none"});
+        }
+    }
+}
 
 $("#right-col-icon").on("click",function () {
     $("#menu").css({"display":"none"});
@@ -13,9 +31,7 @@ for(var i = 0; i < data[0]["name"].length; i++){
 }
 
 
-
 $('#drop-select').append(data[0]["name"][0]);
-
 
 
 $("#drop-select").on("click", function () {
@@ -45,10 +61,29 @@ $("#logo1").on("click",function () {
     $("#registration1").css({"display":"none"});
 });
 
-$("#log-container").on("click",function () {
+
+
+function loginPage() {
     $("#events").css({"display":"none"});
     $("#registration").css({"display": "block"});
     $("#registration1").css({"display":"none"});
+}
+
+function menuClose() {
+    $("#menu").css({"display":"none"});
+}
+
+$("#log-container").on("click",loginPage);
+
+$("#loginout-btn-menu").on("click", function () {
+    loginPage();
+    menuClose();
+});
+
+$("#events-btn-menu").on("click", function () {
+    $("#events").css({"display":"block"});
+    $("#registration").css({"display": "none"});
+    menuClose();
 });
 
 $("#new-reg-btn1").on("click",function () {
