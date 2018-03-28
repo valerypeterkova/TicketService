@@ -426,7 +426,10 @@ input, button{
     margin: 1vw 0;
 }
 
-#forgot-link, .container-fluid-p a{
+.container-fluid-p span{
+    cursor: pointer;
+}
+#forgot-link, .container-fluid-p span{
     text-decoration: none;
     color: #ffc800 ;
     font-family: FuturaFuturisLightC;
@@ -538,6 +541,10 @@ input, button{
     float: right;
     display: inline-block;
     max-width: 45%;
+}
+
+#root{
+    display: none;
 }
 
 #footer{

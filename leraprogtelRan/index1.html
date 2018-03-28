@@ -19,6 +19,7 @@
     
     <script defer src="Scripts/main.js"></script>
     <script defer src='Scripts/script2.js'></script>
+    <script defer type="text/babel" src="Scripts/main-react.js"></script>
 </head>
 <body>
 <div id="back"></div>
@@ -340,9 +341,9 @@
                             <div class="container-fluid-btn">
                                 <input required type="checkbox" id="ch-in-1">
                                 <div class=" container-fluid-p">
-                                    <p>I have read the notice on <a href="#">data protection</a> and the content of
+                                    <p>I have read the notice on <span id="data-prot">data protection</span> and the content of
                                         the
-                                        <a href="#">Standart Terms of Business</a> and agree to the storage of my
+                                        <span id="stand-terms">Standart Terms of Business</span> and agree to the storage of my
                                         personal data.</p>
                                 </div>
                             </div>
@@ -358,6 +359,8 @@
                 </div>
             </div>
         </div>
+
+        <div id="root"></div>
 
             <div class="clearfix"></div>
             <div class="row container-fluid" id="footer">

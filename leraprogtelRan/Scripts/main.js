@@ -1,4 +1,5 @@
 var arr = ["#menu",
+    "#root",
     "#drop-select-option",
     "#second1",
     "#second",
@@ -91,4 +92,7 @@ $("#new-reg-btn1").on("click",function () {
     showView("#registration1");
 });
 
+$("#data-prot").on("click",function () {
+    showView("#root");
+});
 
