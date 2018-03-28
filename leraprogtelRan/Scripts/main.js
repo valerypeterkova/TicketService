@@ -40,19 +40,21 @@ $(".img-ev").on("click",function () {
 $("#logo1").on("click",function () {
     $("#second1").css({"display":"none"});
     $("#second").css({"display": "block"});
+    $("#events").css({"display":"block"});
+    $("#registration").css({"display": "none"});
+    $("#registration1").css({"display":"none"});
 });
 
 $("#log-container").on("click",function () {
     $("#events").css({"display":"none"});
     $("#registration").css({"display": "block"});
-});
-
-$("#logo1").on("click",function () {
-    $("#events").css({"display":"block"});
-    $("#registration").css({"display": "none"});
+    $("#registration1").css({"display":"none"});
 });
 
 $("#new-reg-btn1").on("click",function () {
     $("#registration1").css({"display":"block"});
     $("#registration").css({"display": "none"});
 });
+
+
+
