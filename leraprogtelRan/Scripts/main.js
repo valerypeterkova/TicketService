@@ -57,4 +57,3 @@ $("#new-reg-btn1").on("click",function () {
 });
 
 
-

@@ -264,7 +264,9 @@
 }
 
 #drop-select-option li{
-    margin: 0.5em 0;
+    /* margin: 0.5em 0; */
+    padding: 5px;
+    background: linear-gradient(#f3f3f3, #dcdcd8);
 }
 
 #events-footer{
@@ -481,10 +483,39 @@ input, button{
 }
 
 .drop-arrow1{
-    width: 0.8vw;
+    width:10%;
     height: 0.8vw;
     display: inline-block;
     float: right;
+}
+
+.span-m{
+    width: 90%;
+    font-family: FuturaFuturisC;
+    font-size: 1.5vw;
+    color: #868685;
+}
+.name-m{
+    width: 70%;
+}
+
+.hold-options{
+    position: absolute;
+    display: none;
+}
+
+.hold-options div{
+    /* background-color: #f3f3f3; */
+    background: linear-gradient(#f9f9f9, #e8e8e8);
+    padding: 5px;
+    font-family: FuturaFuturisC;
+    font-size: 1.5vw;
+    color: #868685;
+    /* border: 0.1vw solid #CCCDCE; */
+}
+
+.the-name{
+    border-bottom: 0.1vw solid #95989a;
 }
 
 .container-fluid-btn{
