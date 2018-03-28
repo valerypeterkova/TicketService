@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="CSS/style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
     <script defer src="Scripts/main.js"></script>
-
+    <script defer src='Scripts/script2.js'></script>
 </head>
 <body>
 <div id="back"></div>
@@ -254,13 +255,23 @@
                     <div class="container" id="form-cont1">
                         <form action="#">
                             <!--method="post"-->
-                            <div class="container-fluid">
-                                <select>
+                            <div class='hold-name-input'>
+                                <div class='the-name'>
+                                    <span class='span-m'>Mr.</span>
+                                    <img src="Images/down-arrow.svg" class="drop-arrow1">
+                                </div>
+                                <div class='hold-options'>
+                                    <div><span>Mr.</span></div>
+                                    <div><span>Ms.</span></span></div>
+                                </div>
+                            </div>
+                            <!-- <div class="container-fluid">
+                                <select id='select-m' class='select-m'>
                                     <option>Mr.</option>
                                     <option>Ms.</option>
                                 </select>
                                 <img src="Images/down-arrow.svg" class="drop-arrow1">
-                            </div>
+                            </div> -->
                             <div class="container-fluid">
                                 <input id="input-reg1" type="text" name="Mr/Ms" placeholder="Email">
                             </div>
