@@ -9,315 +9,341 @@
     <link rel="stylesheet" href="CSS/reset.css" type="text/css">
     <link rel="stylesheet" href="CSS/style.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script defer src="Scripts/main.js"></script>
 
 </head>
 <body>
 <div id="back"></div>
-    <div class="row" id="head">
-        <div class=" col-sm-4 " id="img-logo">
-            <img src="Images/logo/logoWhite.png" id="logo1" style="cursor: pointer">
-        </div>
-
-        <div  class="col-sm-5 " id="text-btn">
-            <div><h1>Berlin City Hall | Events and Tickets</h1></div>
-            <div class="clearfix"></div>
-            <div id="log-container"><a href="#" id="log-btn"><p id="log-btn-p">LOGIN</p></a></div>
-        </div>
-        <div  class=" col-sm-3 " id="icons" >
-            <ul id="hr">
-                <li> <a href="#"><img src="Images/icons/youtube-logo.svg"></a></li>
-                <li> <a href="#"><img src="Images/icons/facebook-logo.svg"></a></li>
-                <li> <a href="#"><img src="Images/icons/twitter-logo.svg"></a></li>
-                <li><a href="#"><img src="Images/icons/instagram-logo.svg"></a></li>
-                <li><a href="#"><img src="Images/icons/odnoklassniki-logo.svg"></a></li>
-                <li><a href="#"><img src="Images/icons/wi-fi-logo.svg"></a></li>
-            </ul>
-            <div id="menu-icon-btn" style="cursor: pointer">
-                <img src="Images/menu-button-icon.svg" id="menu-icon" >
-            </div>
-        </div>
+<div class="row" id="head">
+    <div class=" col-sm-4 " id="img-logo">
+        <img src="Images/logo/logoWhite.png" id="logo1" style="cursor: pointer">
     </div>
 
+    <div class="col-sm-5 " id="text-btn">
+        <div><h1>Berlin City Hall | Events and Tickets</h1></div>
+        <div class="clearfix"></div>
+        <div id="log-container"><a href="#" id="log-btn"><p id="log-btn-p">LOGIN</p></a></div>
+    </div>
+    <div class=" col-sm-3 " id="icons">
+        <ul id="hr">
+            <li><a href="#"><img src="Images/icons/youtube-logo.svg"></a></li>
+            <li><a href="#"><img src="Images/icons/facebook-logo.svg"></a></li>
+            <li><a href="#"><img src="Images/icons/twitter-logo.svg"></a></li>
+            <li><a href="#"><img src="Images/icons/instagram-logo.svg"></a></li>
+            <li><a href="#"><img src="Images/icons/odnoklassniki-logo.svg"></a></li>
+            <li><a href="#"><img src="Images/icons/wi-fi-logo.svg"></a></li>
+        </ul>
+        <div id="menu-icon-btn" style="cursor: pointer">
+            <img src="Images/menu-button-icon.svg" id="menu-icon">
+        </div>
+    </div>
+</div>
 
-    <div class="row container-fluid" id="main">
-        <div class="col-sm-3" id="calendar-upcoming">
-            <div class="container-fluid" id="#calendar2">
-                <p id="calendar">Calendar</p>
-                <!-- Календарь внизу -->
-                <style>
-                    #calendar2 thead tr:last-child {
-                        font-size: 1.5vw;
-                        color: #868685;
-                    }
-                    #calendar2 thead tr:nth-child(1) td:nth-child(2) {
-                        color: #868685;
-                    }
-                    #calendar2 thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
-                        cursor: pointer;
-                    }
-                    #calendar2 tbody td {
-                        color: #868685;
-                    }
-                    #calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
-                        color: rgb(108, 108, 107);
-                    }
-                    #calendar2 tbody td.today {
-                        background: rgb(255, 232, 159);
-                        color: #868685;
-                    }
-                </style>
 
-                <table id="calendar2">
-                    <thead>
-                    <tr><td>‹<td colspan="5"><td>›
-                    <tr><td>M<td>T<td>W<td>Th<td>F<td>S<td>S
-                    <tbody>
-                </table>
+<div class="row container-fluid" id="main">
+    <div class="col-sm-3" id="calendar-upcoming">
+        <div class="container-fluid" id="#calendar2">
+            <p id="calendar">Calendar</p>
+            <!-- Календарь внизу -->
+            <style>
+                #calendar2 thead tr:last-child {
+                    font-size: 1.5vw;
+                    color: #868685;
+                }
 
-                <script>
-                    function Calendar2(id, year, month) {
-                        var Dlast = new Date(year,month+1,0).getDate(),
-                            D = new Date(year,month,Dlast),
-                            DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
-                            DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
-                            calendar = '<tr>',
-                            month=["January","February","March","April","May","June","July","August","September","October","November","December"];
-                        if (DNfirst != 0) {
-                            for(var  i = 1; i < DNfirst; i++) calendar += '<td>';
-                        }else{
-                            for(var  i = 0; i < 6; i++) calendar += '<td>';
+                #calendar2 thead tr:nth-child(1) td:nth-child(2) {
+                    color: #868685;
+                }
+
+                #calendar2 thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+                    cursor: pointer;
+                }
+
+                #calendar2 tbody td {
+                    color: #868685;
+                }
+
+                #calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
+                    color: rgb(108, 108, 107);
+                }
+
+                #calendar2 tbody td.today {
+                    background: rgb(255, 232, 159);
+                    color: #868685;
+                }
+            </style>
+
+            <table id="calendar2">
+                <thead>
+                <tr>
+                    <td>‹
+                    <td colspan="5">
+                    <td>›
+                <tr>
+                    <td>M
+                    <td>T
+                    <td>W
+                    <td>Th
+                    <td>F
+                    <td>S
+                    <td>S
+                <tbody>
+            </table>
+
+            <script>
+                function Calendar2(id, year, month) {
+                    var Dlast = new Date(year, month + 1, 0).getDate(),
+                        D = new Date(year, month, Dlast),
+                        DNlast = new Date(D.getFullYear(), D.getMonth(), Dlast).getDay(),
+                        DNfirst = new Date(D.getFullYear(), D.getMonth(), 1).getDay(),
+                        calendar = '<tr>',
+                        month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    if (DNfirst != 0) {
+                        for (var i = 1; i < DNfirst; i++) calendar += '<td>';
+                    } else {
+                        for (var i = 0; i < 6; i++) calendar += '<td>';
+                    }
+                    for (var i = 1; i <= Dlast; i++) {
+                        if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
+                            calendar += '<td class="today">' + i;
+                        } else {
+                            calendar += '<td>' + i;
                         }
-                        for(var  i = 1; i <= Dlast; i++) {
-                            if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
-                                calendar += '<td class="today">' + i;
-                            }else{
-                                calendar += '<td>' + i;
-                            }
-                            if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
-                                calendar += '<tr>';
-                            }
-                        }
-                        for(var  i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
-                        document.querySelector('#'+id+' tbody').innerHTML = calendar;
-                        document.querySelector('#'+id+' thead td:nth-child(2)').innerHTML = month[D.getMonth()] +' '+ D.getFullYear();
-                        document.querySelector('#'+id+' thead td:nth-child(2)').dataset.month = D.getMonth();
-                        document.querySelector('#'+id+' thead td:nth-child(2)').dataset.year = D.getFullYear();
-                        if (document.querySelectorAll('#'+id+' tbody tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
-                            document.querySelector('#'+id+' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
+                        if (new Date(D.getFullYear(), D.getMonth(), i).getDay() == 0) {
+                            calendar += '<tr>';
                         }
                     }
-                    Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
-                    // переключатель минус месяц
-                    document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
-                        Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)-1);
+                    for (var i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
+                    document.querySelector('#' + id + ' tbody').innerHTML = calendar;
+                    document.querySelector('#' + id + ' thead td:nth-child(2)').innerHTML = month[D.getMonth()] + ' ' + D.getFullYear();
+                    document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.month = D.getMonth();
+                    document.querySelector('#' + id + ' thead td:nth-child(2)').dataset.year = D.getFullYear();
+                    if (document.querySelectorAll('#' + id + ' tbody tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
+                        document.querySelector('#' + id + ' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
                     }
-                    // переключатель плюс месяц
-                    document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
-                        Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)+1);
-                    }
-                </script>
-                <!-- Календарь вверху -->
+                }
+
+                Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
+                // переключатель минус месяц
+                document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function () {
+                    Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) - 1);
+                }
+                // переключатель плюс месяц
+                document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function () {
+                    Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) + 1);
+                }
+            </script>
+            <!-- Календарь вверху -->
+        </div>
+        <div class="container" id="up-ev">
+            <p id="upcoming-events">Upcoming events</p>
+            <!--<div class="container">-->
+            <img src="Images/div/evev1.jpg">
+            <!--</div>-->
+            <!--<div class="container">-->
+            <img src="Images/div/evev2.jpg">
+            <!--</div>-->
+            <!--<div class="container">-->
+            <img src="Images/div/evev3.jpg">
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="col-sm-9 " id="events-footer">
+        <div class="container" id="events">
+            <div class="row container-fluid" id="first" style="margin-bottom: 1vw">
+                <div class=" col-sm-9" id="events-p-text">
+                    <a href="#"><p id="events-p">EVENTS</p></a>
+                </div>
+                <div class="col-sm-3 " id="events-drop-menu">
+                    <div style="display: inline-block; float: right; margin-right: 10vw">
+                        <img src="Images/down-arrow.svg" id="drop-arrow">
+                        <div id="menuUl">
+                            <div id="drop-select"></div>
+                            <ul id="drop-select-option"></ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="container" id="up-ev">
-                <p id="upcoming-events">Upcoming events</p>
-                <!--<div class="container">-->
-                    <img src="Images/div/evev1.jpg" >
-                <!--</div>-->
-                <!--<div class="container">-->
-                    <img src="Images/div/evev2.jpg">
-                <!--</div>-->
-                <!--<div class="container">-->
-                    <img src="Images/div/evev3.jpg">
-                <!--</div>-->
+            <div class="clearfix"></div>
+            <!--//coderjimoe-->
+            <div class="row container-fluid" id="second">
+                <div class=" col-sm-6 " id="events11">
+                    <div class="container-fluid" id="event1">
+                        <img src="Images/div/ev1.jpg" class="img-ev" id="img-ev1" style="cursor: pointer">
+                    </div>
+                    <div class="container-fluid" id="event3">
+                        <img src="Images/div/ev3.jpg" class="img-ev" style="cursor: pointer">
+                    </div>
+                </div>
+                <div class="col-sm-6 " id="events22">
+                    <div class="container-fluid" id="event2">
+                        <img src="Images/div/ev2.jpg" class="img-ev" style="cursor: pointer">
+                    </div>
+                    <div class="container-fluid" id="event4">
+                        <img src="Images/div/ev4.jpg" class="img-ev" style="cursor: pointer">
+                    </div>
+                </div>
+            </div>
+            <div class="row container-fluid" id="second1">
+                <div class="col-sm-6 " id="event-user-photo">
+                    <div class="container" style="margin: 0; padding: 0">
+                        <img src="Images/div/event1.jpg" style="height: 34vw">
+                    </div>
+                </div>
+                <div class="col-sm-6 " id="event-user-description">
+                    <h3 id="event-user-h3">Lady Gaga</h3>
+                    <p id="description-txt">
+                        Since her breakthrough with 'The Fame', the legendary Lady Gaga
+                        has made it to the top of the charts and into the hearts
+                        of millions of fans in no time. Also through her extravagant
+                        clothing style and ingenious shows, the talented 'bird of paradise pop music'
+                        draws attention again and is today the first and most successful musician in
+                        the world with four number 1 albums in a row. Absolutely
+                        live experience!
+                    </p>
+                    <p class="p">Date: </p>
+                    <p class="p">Tickets avaliable - </p>
+                    <p class="p">Price range: </p>
+                    <br>
+                    <p class="p" id="buy-btn">BUY TICKETS</p>
+                </div>
             </div>
         </div>
-        <div class="col-sm-9 " id="events-footer">
-            <!--<div class="container" id="events">-->
-                <!--<div class="row container-fluid" id="first" style="margin-bottom: 1vw">-->
-                    <!--<div class=" col-sm-9" id="events-p-text">-->
-                        <!--<a href="#"><p id="events-p">EVENTS</p></a>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-3 " id="events-drop-menu">-->
-                        <!--<div style="display: inline-block; float: right; margin-right: 10vw">-->
-                            <!--<img src="Images/down-arrow.svg" id="drop-arrow">-->
-                            <!--<div id="menuUl">-->
-                                <!--<div id="drop-select"></div>-->
-                                <!--<ul id="drop-select-option"></ul>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="clearfix"></div>-->
-                <!--&lt;!&ndash;//coderjimoe&ndash;&gt;-->
-                <!--<div class="row container-fluid" id="second">-->
-                    <!--<div class=" col-sm-6 " id="events11">-->
-                        <!--<div class="container-fluid" id="event1">-->
-                            <!--<img src="Images/div/ev1.jpg" class="img-ev" id="img-ev1" style="cursor: pointer">-->
-                        <!--</div>-->
-                        <!--<div class="container-fluid" id="event3">-->
-                            <!--<img src="Images/div/ev3.jpg" class="img-ev" style="cursor: pointer">-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-6 " id="events22">-->
-                        <!--<div class="container-fluid" id="event2" >-->
-                            <!--<img src="Images/div/ev2.jpg" class="img-ev" style="cursor: pointer">-->
-                        <!--</div>-->
-                        <!--<div class="container-fluid" id="event4">-->
-                            <!--<img src="Images/div/ev4.jpg" class="img-ev" style="cursor: pointer">-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="row container-fluid" id="second1">-->
-                    <!--<div class="col-sm-6 " id="event-user-photo">-->
-                        <!--<div class="container" style="margin: 0; padding: 0">-->
-                            <!--<img src="Images/div/event1.jpg" style="height: 34vw">-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-6 " id="event-user-description">-->
-                        <!--<h3 id="event-user-h3">Lady Gaga</h3>-->
-                        <!--<p id="description-txt">Since her breakthrough with 'The Fame', the legendary Lady Gaga-->
-                            <!--has made it to the top of the charts and into the hearts-->
-                            <!--of millions of fans in no time. Also through her extravagant-->
-                            <!--clothing style and ingenious shows, the talented 'bird of paradise pop music'-->
-                            <!--draws attention again and is today the first and most successful musician in-->
-                            <!--the world with four number 1 albums in a row. Absolutely-->
-                            <!--live experience!</p>-->
-                        <!--<p class="p">Date: </p>-->
-                        <!--<p class="p">Tickets avaliable - </p>-->
-                       <!--<p class="p">Price range: </p>-->
-                       <!--<br><p class="p" id="buy-btn">BUY TICKETS</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
 
-            <!--<div class="container" id="registration">-->
-                <!--<div class="container" id="reg-p-text">-->
-                    <!--<p id="reg-p">REGISTRATION</p></a>-->
-                <!--</div>-->
-                <!--<div class="clearfix"></div>-->
-                <!--<div class="row container-fluid" id="log-page">-->
-                    <!--<div class="col-sm-6 " id="already-reg">-->
-                        <!--<p id="log-p">I am already a customer.</p>-->
-                        <!--<div class="container" id="form-cont">-->
-                            <!--<form action="#" method="post">-->
-                                <!--<div class="container-fluid" id="email-input-log">-->
-                                    <!--<input id="email-txt" type="text"  name="Email" placeholder="Email">-->
-                                    <!--<button id="input-btn1" type="reset" >&times;</button>-->
-                                <!--</div>-->
-                                <!--<div class="container-fluid" id="password-input-log">-->
-                                    <!--<input id="pass-txt" type="password" name="Password" placeholder="Password">-->
-                                    <!--<button id="input-btn2" type="reset" >&times;</button>-->
-                                <!--</div>-->
-                                <!--<br><a href="#" id="forgot-link">Forgotten password?</a>-->
-                                <!--<br><input type="submit" value="Login" id="log-btn-input">-->
-                            <!--</form>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-6 " id="new-reg">-->
-                        <!--<p id="new-reg-p">New customer</p>-->
-                        <!--<button id="new-reg-btn1" type="button">Register</button>-->
-                        <!--&lt;!&ndash;<div class="clearfix"></div>&ndash;&gt;-->
-                        <!--<br><button id="new-reg-btn2" type="button" >Login with invitation code</button>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <div class="container" id="registration1">
-                <div class="container" id="reg-p-text1">
-                    <p id="reg-p1">REGISTRATION</p></a>
-                </div>
-                <div class="clearfix"></div>
-                <div class="row container-fluid" id="reg-page">
-                    <div class="col-sm-6 " id="salutation-address">
-                        <p id="sal-adr-p">Salutation and address</p>
-                        <div class="container" id="form-cont1">
-                            <form action="#" >
-                                <!--method="post"-->
-                                <div class="container-fluid">
-                                    <select>
-                                        <option>Mr.</option>
-                                        <option>Ms.</option>
-                                    </select>
-                                    <img src="Images/down-arrow.svg" class="drop-arrow1">
-                                </div>
-                                <div class="container-fluid">
-                                    <input id="input-reg1" type="text"  name="Mr/Ms" placeholder="Email">
-                                </div>
-                                <div class="container-fluid">
-                                    <input required id="input-reg2" type="text"  name="Name" placeholder="Name*">
-                                </div>
-                                <div class="container-fluid">
-                                    <input  required id="input-reg3" type="text"  name="Surname" placeholder="Surname*">
-                                </div>
-                                <div class="container-fluid">
-                                    <input id="input-reg4" type="text"  name="Company" placeholder="Company">
-                                </div>
-                                <div class="container-fluid">
-                                    <input required id="input-reg5" type="text"  name="Street" placeholder="Street*">
-                                </div>
-                                <div class="container-fluid">
-                                    <input required id="input-reg6" type="text"  name="House" placeholder="House*">
-                                </div>
-                                <div class="container-fluid">
-                                    <input id="input-reg7" type="text"  name="Additional info" placeholder="Additional info">
-                                </div>
-                                <div class="container-fluid">
-                                    <input id="input-reg8" type="text"  name="Postcode" placeholder="Postcode">
-                                </div>
-                                <div class="container-fluid">
-                                    <input id="input-reg9" type="text"  name="City" placeholder="City">
-                                </div>
-                                <div class="container-fluid">
-                                    <input id="input-reg10" type="text"  name="Country" placeholder="Country">
-                                </div>
-                            </form>
-                        </div>
+        <div class="container" id="registration">
+            <div class="container" id="reg-p-text">
+                <p id="reg-p">REGISTRATION</p>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row container-fluid" id="log-page">
+                <div class="col-sm-6 " id="already-reg">
+                    <p id="log-p">I am already a customer.</p>
+                    <div class="container" id="form-cont">
+                        <form action="#" method="post">
+                            <div class="container-fluid" id="email-input-log">
+                                <input id="email-txt" type="text" name="Email" placeholder="Email">
+                                <button id="input-btn1" type="reset">&times;</button>
+                            </div>
+                            <div class="container-fluid" id="password-input-log">
+                                <input id="pass-txt" type="password" name="Password" placeholder="Password">
+                                <button id="input-btn2" type="reset">&times;</button>
+                            </div>
+                            <br><a href="#" id="forgot-link">Forgotten password?</a>
+                            <br><input type="submit" value="Login" id="log-btn-input">
+                        </form>
                     </div>
-                    <div class="col-sm-6 " id="contact-info">
-                        <p id="con-info-p">Contact information</p>
-                        <div class="container" id="form-cont2">
-                            <form action="#" >
-                                <div class="container-fluid">
-                                    <select>
-                                        <option>Email</option>
-                                        <option>Name1</option>
-                                    </select>
-                                    <img src="Images/down-arrow.svg" class="drop-arrow1">
+                </div>
+                <div class="col-sm-6 " id="new-reg">
+                    <p id="new-reg-p">New customer</p>
+                    <button id="new-reg-btn1" type="button">Register</button>
+                    <!--<div class="clearfix"></div>-->
+                    <br>
+                    <button id="new-reg-btn2" type="button">Login with invitation code</button>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="registration1">
+            <div class="container" id="reg-p-text1">
+                <p id="reg-p1">REGISTRATION</p></a>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row container-fluid" id="reg-page">
+                <div class="col-sm-6 " id="salutation-address">
+                    <p id="sal-adr-p">Salutation and address</p>
+                    <div class="container" id="form-cont1">
+                        <form action="#">
+                            <!--method="post"-->
+                            <div class="container-fluid">
+                                <select>
+                                    <option>Mr.</option>
+                                    <option>Ms.</option>
+                                </select>
+                                <img src="Images/down-arrow.svg" class="drop-arrow1">
+                            </div>
+                            <div class="container-fluid">
+                                <input id="input-reg1" type="text" name="Mr/Ms" placeholder="Email">
+                            </div>
+                            <div class="container-fluid">
+                                <input required id="input-reg2" type="text" name="Name" placeholder="Name*">
+                            </div>
+                            <div class="container-fluid">
+                                <input required id="input-reg3" type="text" name="Surname" placeholder="Surname*">
+                            </div>
+                            <div class="container-fluid">
+                                <input id="input-reg4" type="text" name="Company" placeholder="Company">
+                            </div>
+                            <div class="container-fluid">
+                                <input required id="input-reg5" type="text" name="Street" placeholder="Street*">
+                            </div>
+                            <div class="container-fluid">
+                                <input required id="input-reg6" type="text" name="House" placeholder="House*">
+                            </div>
+                            <div class="container-fluid">
+                                <input id="input-reg7" type="text" name="Additional info"
+                                       placeholder="Additional info">
+                            </div>
+                            <div class="container-fluid">
+                                <input id="input-reg8" type="text" name="Postcode" placeholder="Postcode">
+                            </div>
+                            <div class="container-fluid">
+                                <input id="input-reg9" type="text" name="City" placeholder="City">
+                            </div>
+                            <div class="container-fluid">
+                                <input id="input-reg10" type="text" name="Country" placeholder="Country">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-6 " id="contact-info">
+                    <p id="con-info-p">Contact information</p>
+                    <div class="container" id="form-cont2">
+                        <form action="#">
+                            <div class="container-fluid">
+                                <select>
+                                    <option>Email</option>
+                                    <option>Name1</option>
+                                </select>
+                                <img src="Images/down-arrow.svg" class="drop-arrow1">
+                            </div>
+                            <div class="container-fluid">
+                                <input id="input-reg11" type="text" name="Password" placeholder="Password">
+                            </div>
+                            <div class="container-fluid">
+                                <input id="input-reg12" type="text" name="Confirm password"
+                                       placeholder="Confirm password">
+                            </div>
+                            <div class="container-fluid">
+                                <input id="input-reg13" type="text" name="Phone number" placeholder="Phone number">
+                            </div>
+                            <div class="container-fluid" style="margin-bottom: 3.5vw;">
+                                <input id="input-reg14" type="text" name="Additional phone number"
+                                       placeholder="Additional phone number">
+                            </div>
+                            <div class="container-fluid-btn">
+                                <input required type="checkbox" id="ch-in-1">
+                                <div class=" container-fluid-p">
+                                    <p>I have read the notice on <a href="#">data protection</a> and the content of
+                                        the
+                                        <a href="#">Standart Terms of Business</a> and agree to the storage of my
+                                        personal data.</p>
                                 </div>
-                                <div class="container-fluid">
-                                    <input id="input-reg11" type="text"  name="Password" placeholder="Password">
+                            </div>
+                            <div class="container-fluid-btn" style="margin-bottom: 1.5vw">
+                                <input type="checkbox" id="ch-in-2">
+                                <div class=" container-fluid-p">
+                                    <p>I agree to get notifications on me Email and phone.</p>
                                 </div>
-                                <div class="container-fluid">
-                                    <input id="input-reg12" type="text"  name="Confirm password" placeholder="Confirm password">
-                                </div>
-                                <div class="container-fluid">
-                                    <input id="input-reg13" type="text"  name="Phone number" placeholder="Phone number">
-                                </div>
-                                <div class="container-fluid" style="margin-bottom: 3.5vw;">
-                                    <input id="input-reg14" type="text"  name="Additional phone number" placeholder="Additional phone number">
-                                </div>
-                                <div class="container-fluid-btn">
-                                    <input required type="checkbox" id="ch-in-1">
-                                    <div class=" container-fluid-p">
-                                        <p>I have read the notice on <a href="#">data protection</a> and the content of the
-                                        <a href="#">Standart Terms of Business</a> and agree to the storage of my personal data.</p>
-                                    </div>
-                                </div>
-                                <div class="container-fluid-btn" style="margin-bottom: 1.5vw">
-                                    <input type="checkbox" id="ch-in-2">
-                                    <div class=" container-fluid-p">
-                                        <p>I agree to get notifications on me Email and phone.</p>
-                                    </div>
-                                </div>
-                                <button id="reg-btn1" type="submit">Register</button>
-                            </form>
-                        </div>
+                            </div>
+                            <button id="reg-btn1" type="submit">Register</button>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
 
             <div class="clearfix"></div>
-            <div class="row container-fluid" id="footer" >
+            <div class="row container-fluid" id="footer">
                 <div class="col-sm-3 " id="footer-logo-col">
                     <img src="Images/logoColoured.png" id="logo-footer">
                 </div>
@@ -346,41 +372,41 @@
         </div>
     </div>
 
-<div class="row container-fluid" id="menu" style="z-index: 1000">
-    <div class=" col-sm-3  " id="img-logo-menu">
-        <img src="Images/logo/logoWhite.png" id="logo-menu">
+    <div class="row container-fluid" id="menu" style="z-index: 1000">
+        <div class=" col-sm-3  " id="img-logo-menu">
+            <img src="Images/logo/logoWhite.png" id="logo-menu">
+        </div>
+        <div class=" col-sm-6 " id="text-icons-menu">
+            <h2>Berlin City Hall | Events and Tickets</h2>
+            <ul id="hr-menu">
+                <li><a href="#"><img src="Images/menu-icons/youtube-logomenu.svg"></a></li>
+                <li><a href="#"><img src="Images/menu-icons/facebook-logomenu.svg"></a></li>
+                <li><a href="#"><img src="Images/menu-icons/twitter-logomenu.svg"></a></li>
+                <li><a href="#"><img src="Images/menu-icons/instagram-logomenu.svg"></a></li>
+                <li><a href="#"><img src="Images/menu-icons/odnoklassniki-logomenu.svg"></a></li>
+                <li><a href="#"><img src="Images/menu-icons/wi-fi-logomenu.svg"></a></li>
+            </ul>
+            <p id="adress-menu">
+                <br>Berlin City Hall
+                <br>Freudstrasse 69, 10117 Berlin
+                <br>Tel.: 0302223344
+                <br>Fax: 0302223355
+                <br>E-Mail: info@bsh.de
+            </p>
+        </div>
+        <div class=" col-sm-2 " id="right-col">
+            <ul id="txt-menu">
+                <li><a href="#">LOGIN/OUT</a></li>
+                <li><a href="#">EVENTS</a></li>
+                <li><a href="#">SHOPPING CART</a></li>
+                <li><a href="#">HALLS SCHEME</a></li>
+                <li><a href="#">ABOUT US</a></li>
+            </ul>
+        </div>
+        <div class=" col-sm-1" id="right-col-icon">
+            <img src="Images/menu-icons/menu_icon_close.svg" id="menu-close" style="cursor: pointer">
+        </div>
     </div>
-    <div  class=" col-sm-6 " id="text-icons-menu">
-        <h2>Berlin City Hall | Events and Tickets</h2>
-        <ul id="hr-menu">
-            <li> <a href="#"><img src="Images/menu-icons/youtube-logomenu.svg"></a></li>
-            <li> <a href="#"><img src="Images/menu-icons/facebook-logomenu.svg"></a></li>
-            <li> <a href="#"><img src="Images/menu-icons/twitter-logomenu.svg"></a></li>
-            <li><a href="#"><img src="Images/menu-icons/instagram-logomenu.svg"></a></li>
-            <li><a href="#"><img src="Images/menu-icons/odnoklassniki-logomenu.svg"></a></li>
-            <li><a href="#"><img src="Images/menu-icons/wi-fi-logomenu.svg"></a></li>
-        </ul>
-        <p id="adress-menu">
-            <br>Berlin City Hall
-            <br>Freudstrasse 69, 10117 Berlin
-            <br>Tel.: 0302223344
-            <br>Fax: 0302223355
-            <br>E-Mail: info@bsh.de
-        </p>
-    </div>
-    <div  class=" col-sm-2 " id="right-col">
-        <ul id="txt-menu">
-            <li> <a href="#">LOGIN/OUT</a></li>
-            <li> <a href="#">EVENTS</a></li>
-            <li> <a href="#">SHOPPING CART</a></li>
-            <li><a href="#">HALLS SCHEME</a></li>
-            <li><a href="#">ABOUT US</a></li>
-        </ul>
-    </div>
-    <div  class=" col-sm-1" id="right-col-icon">
-        <img src="Images/menu-icons/menu_icon_close.svg" id="menu-close" style="cursor: pointer">
-    </div>
-</div>
 
 </body>
 </html>

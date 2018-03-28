@@ -51,3 +51,8 @@ $("#logo1").on("click",function () {
     $("#events").css({"display":"block"});
     $("#registration").css({"display": "none"});
 });
+
+$("#new-reg-btn1").on("click",function () {
+    $("#registration1").css({"display":"block"});
+    $("#registration").css({"display": "none"});
+});

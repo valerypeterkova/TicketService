@@ -342,11 +342,12 @@
 
 #registration, #registration1{
     max-width: 100%;
+    display: none;
 }
 
  #registration{
      margin-bottom: 20vw;
-     display: none;
+
  }
 
 #reg-p-text, #reg-p-text1{
