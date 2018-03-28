@@ -1,0 +1,49 @@
+@font-face {
+    font-family: DINPro;
+    src: url(fonts/DINPro.otf);
+}
+
+@font-face {
+    font-family: dinpro-black;
+    src: url(fonts/dinpro-black.otf);
+}
+
+@font-face {
+    font-family: dinpro-bold;
+    src: url(fonts/dinpro-bold.otf);
+}
+
+@font-face {
+    font-family: DINPro-CondBold;
+    src: url(fonts/DINPro-CondBold.otf);
+}
+
+@font-face {
+    font-family: DINPro-CondLight;
+    src: url(fonts/DINPro-CondLight.otf);
+}
+
+@font-face {
+    font-family: dinpro-light;
+    src: url(fonts/dinpro-light.otf);
+}
+
+@font-face {
+    font-family: dinpro-medium;
+    src: url(fonts/dinpro-medium.otf);
+}
+
+@font-face {
+    font-family: FuturaFuturisC;
+    src: url(fonts/FuturaFuturisC[1].otf);
+}
+
+@font-face {
+    font-family: FuturaFuturisC-Bold;
+    src: url(fonts/FuturaFuturisC-Bold.otf);
+}
+
+@font-face {
+    font-family: FuturaFuturisLightC;
+    src: url(fonts/FuturaFuturisLightC[1].otf);
+}

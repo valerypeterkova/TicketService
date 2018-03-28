@@ -1,0 +1,828 @@
+
+@font-face {
+    font-family: DINPro;
+    src: url(fonts/DINPro.otf);
+}
+
+@font-face {
+    font-family: dinpro-black;
+    src: url(fonts/dinpro-black.otf);
+}
+
+@font-face {
+    font-family: dinpro-bold;
+    src: url(fonts/dinpro-bold.otf);
+}
+
+@font-face {
+    font-family: DINPro-CondBold;
+    src: url(fonts/DINPro-CondBold.otf);
+}
+
+@font-face {
+    font-family: DINPro-CondLight;
+    src: url(fonts/DINPro-CondLight.otf);
+}
+
+@font-face {
+    font-family: dinpro-light;
+    src: url(fonts/dinpro-light.otf);
+}
+
+@font-face {
+    font-family: dinpro-medium;
+    src: url(fonts/dinpro-medium.otf);
+}
+
+@font-face {
+    font-family: FuturaFuturisC;
+    src: url(fonts/FuturaFuturisC[1].otf);
+}
+
+@font-face {
+    font-family: FuturaFuturisC-Bold;
+    src: url(fonts/FuturaFuturisC-Bold.otf);
+}
+
+@font-face {
+    font-family: FuturaFuturisLightC;
+    src: url(fonts/FuturaFuturisLightC[1].otf);
+}
+
+/*body{*/
+    /*font-family: FuturaFuturisC;*/
+    /*font-size: 1.2vw;*/
+    /*color: #95989a;*/
+/*}*/
+#back{
+    background-image: url(../Images/decorGrey@2x.png);
+    background-size: 40%;
+    background-position: right -2vw bottom -3vw;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+#background-image{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#head{
+    margin-right: 1.5vw;
+    margin-left: 0;
+    padding: 0;
+}
+
+#img-logo{
+    height: 6.5vw;
+    max-width: 28vw;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: url("../Images/logo/gradient@2x.png");
+    background-size: cover;
+}
+
+#logo1{
+    max-width: 50vw;
+    max-height: 6.4vw;
+    padding: 1.2vw 2vw 0 12vw  ;
+}
+
+#text-btn{
+    height: 6.5vw;
+    border: 0;
+    font-family:DINPro;
+    font-size: 1.5vw;
+    color: #868685;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#text-btn h1{
+   margin-top: 1vw;
+}
+
+#log-container{
+    position: absolute;
+    bottom: 0;
+}
+
+#log-btn{
+    display: inline-block;
+    border-bottom: 0.5vw solid #868685;
+    height: auto;
+    font-family:dinpro-medium;
+    font-size: 1.4vw;
+    color: #868685;
+    text-decoration: none;
+}
+
+#icons{
+    padding: 0;
+    height: 6.5vw;
+    border: 0;
+    margin: 0;
+    text-align: right;
+}
+
+#menu-icon{
+    max-width: 1.8vw;
+}
+
+#menu-icon-btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#hr{
+    height: auto;
+    display: inline-flex;
+    justify-content: end;
+    list-style: none;
+}
+
+#icons li img{
+    max-width: 1.8vw;
+    float: right;
+    padding: 0;
+    margin: 0.3vw;
+}
+
+#main{
+    background: rgba(134,134,133,0.1);
+    margin: 0 auto;
+    width: 88%;
+    height: 100%;
+}
+
+#calendar-upcoming{
+    border: 0;
+    margin: 3vw 0 0 0;
+    padding: 1vw 0 1vw 1vw;
+}
+
+#calendar{
+    font-family: FuturaFuturisC;
+    font-size: 1.5vw;
+    color: #868685;
+    text-align: start;
+    padding: 0 0 1vw 1vw;
+}
+
+#calendar2{
+    font-family: FuturaFuturisLightC;
+    width: 85%;
+    line-height: 1.7vw;
+    font-size: 1.3vw;
+    text-align: center;
+}
+
+#upcoming-events{
+    font-family: FuturaFuturisC;
+    font-size: 1.5vw;
+    color: #868685;
+}
+
+#up-ev{
+    width: 100% ;
+    height: auto;
+}
+
+#up-ev img{
+    display: block;
+    width: 85%;
+    margin-top: 2vw;
+}
+
+#events-drop-menu{
+    width: 25%;
+}
+
+#events-p-text{
+    padding: 0;
+    margin: 0 auto;
+    text-align: center
+}
+
+#events-p{
+    font-family: FuturaFuturisC-Bold;
+    font-size: 2.5vw;
+    color:#868685 ;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 14vw;
+    border-bottom: 0.7vw solid #868685;
+    line-height: 2.2vw;
+}
+
+#events-drop-menu{
+    display: inline-block;
+    padding: 0;
+}
+
+#drop-arrow{
+    width: 1vw;
+    height: 1vw;
+    display: inline-block;
+}
+
+#menuUl{
+    position: absolute;
+    z-index: 10;
+    top:0;
+    display: inline-block;
+    margin-left: 1.5vw;
+}
+
+#drop-select{
+    border: none;
+    background: transparent;
+    font-family: FuturaFuturisLightC;
+    color: #868685;
+    font-size: 1.2vw;
+    text-align: left;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#drop-select-option{
+    background-color: rgba(243, 243, 243, 0.6);
+    border: none;
+    font-family: FuturaFuturisLightC;
+    color: #868685;
+    font-size: 1.2vw;
+    text-align: left;
+    list-style: none;
+    display: none;
+    cursor: pointer;
+    margin-top: 1.5vw;
+}
+
+#drop-select-option li{
+    margin: 0.5em 0;
+}
+
+#events-footer{
+    margin-top: 2vw;
+}
+
+#events{
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    float: right;
+    padding: 0;
+    margin-bottom: 2vw;
+}
+
+#event1{
+    padding: 0;
+    margin: 0;
+}
+
+#event2{
+    padding: 0;
+    margin: 0;
+}
+
+#event3{
+    padding: 0;
+    margin: 0;
+}
+
+#event4{
+    padding: 0;
+    margin: 0;
+}
+
+.img-ev{
+    height: 18vw;
+    padding: 0.7vw 0.7vw 0 0 ;
+}
+
+#events11, #events22{
+    padding: 0;
+    margin: 0;
+}
+
+#second1{
+    font-family: FuturaFuturisC-Bold;
+    display: none;
+    color: #95989a;
+    margin-bottom: 3vw;
+}
+
+#event-user-h3{
+    font-family: FuturaFuturisC-Bold;
+    font-size: 1.7vw;
+    color: #95989a;
+}
+
+#description-txt{
+    margin: 2vw 0 2vw 0;
+    font-family: FuturaFuturisC;
+    font-size: 1.1vw;
+}
+
+.p {
+    font-family: FuturaFuturisC-Bold;
+    font-size: 1.7vw;
+    color: #95989a;
+}
+
+#buy-btn{
+    cursor: pointer;
+    color: #ffc800 ;
+ }
+
+#registration, #registration1{
+    max-width: 100%;
+}
+
+ #registration{
+     margin-bottom: 20vw;
+     display: none;
+ }
+
+#reg-p-text, #reg-p-text1{
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 3vw;
+    padding: 0;
+}
+
+#reg-p, #reg-p1{
+    font-family: FuturaFuturisC-Bold;
+    font-size: 2.5vw;
+    color:#696a6d ;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 0.7vw solid #696a6d;
+    line-height: 2.2vw;
+    text-align: center;
+}
+
+#form-cont{
+    margin: 2vw 0 0 0 ;
+    padding: 0;
+    max-width: 50%;
+}
+#email-input-log, #password-input-log{
+    border-bottom: 0.1vw solid #868685;
+    display: inline-block;
+    padding: 0;
+    max-width: 100%;
+    float: left;
+    margin-bottom: 1vw;
+}
+
+input, button{
+    border: none;
+    padding: 0;
+}
+
+#log-p, #new-reg-p, #sal-adr-p, #con-info-p{
+    font-family: FuturaFuturisC-Bold;
+    color: #868685;
+    font-size: 1.5vw;
+}
+
+#input-btn1, #input-btn2{
+    color: #868685;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.4vw;
+    float: right;
+    display: inline-block;
+    max-width: 9%;
+}
+
+#log-btn-input, #new-reg-btn1, #new-reg-btn2, #reg-btn1{
+    background-color: #696a6d;
+    color: white;
+    font-family: FuturaFuturisC-Bold;
+    font-size: 1.5vw;
+    text-align: center;
+    width: 100%;
+    height: 2.5vw;
+}
+
+#log-btn-input{
+    margin: 1vw 0;
+}
+
+#new-reg-p{
+    margin-bottom: 1vw;
+}
+
+#new-reg-btn1, #new-reg-btn2{
+    margin: 1vw 0;
+}
+
+#forgot-link, .container-fluid-p a{
+    text-decoration: none;
+    color: #ffc800 ;
+    font-family: FuturaFuturisLightC;
+}
+
+#email-txt, #pass-txt{
+    font-family: FuturaFuturisC;
+    font-size: 1.5vw;
+    background-color: transparent;
+    max-width: 94%;
+    display: inline-block;
+    color: #868685;
+}
+
+#salutation-address, #contact-info, #reg-page{
+    padding: 0;
+}
+
+#form-cont1, #form-cont2{
+    margin: 0;
+    padding: 0;
+}
+
+#form-cont1{
+    max-width: 90%;
+}
+
+#form-cont2{
+    max-width: 95%;
+}
+
+#registration1 select option, #registration1 select, #registration1 input{
+    border: none;
+    background-color: transparent;
+    font-family: FuturaFuturisC;
+    font-size: 1.5vw;
+    max-width: 100%;
+    display: inline-block;
+    color: #868685;
+}
+
+#reg-page .container-fluid input{
+    width: 100%;
+}
+
+#reg-page .container-fluid{
+    border-bottom: 0.1vw solid #95989a;
+    padding: 0;
+}
+
+#sal-adr-p, #con-info-p{
+    margin-bottom: 2vw;
+}
+
+.drop-arrow1{
+    width: 0.8vw;
+    height: 0.8vw;
+    display: inline-block;
+    float: right;
+}
+
+.container-fluid-btn{
+    display: inline-block;
+    margin-bottom: 1vw;
+}
+
+.container-fluid-btn p{
+    font-family: FuturaFuturisLightC;
+    color: #868685;
+    font-size: 1vw;
+}
+
+.container-fluid-btn input{
+    margin: 0.3vw 0.5vw 2vw 0;
+    float: left;
+}
+
+#reg-btn1{
+    margin: 2vw 0;
+    float: right;
+    display: inline-block;
+    max-width: 45%;
+}
+
+#footer{
+    margin: 0;
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+}
+
+#logo-footer{
+    height: 5vw;
+    width: auto;
+}
+
+#adress-footer, #adress-footer2{
+    font-family:FuturaFuturisLightC;
+    font-size: 1vw;
+    color: #868685;
+}
+
+#adress-footer{
+    text-align: left;
+}
+
+#adress-footer2{
+    text-align: right;
+}
+
+#hr-footer{
+    float: right;
+    height: auto;
+    display: inline-flex;
+    justify-content: end;
+    list-style: none;
+}
+
+#hr-footer img {
+    width: 1vw;
+    height: 1vw;
+    float: right;
+    display: inline;
+    margin: 0.2vw;
+}
+
+#footer-logo-col, #footer-icons-col, #footer-p-col{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#menu{
+    background: #696a6d;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    position: absolute;
+    width: 100%;
+    top:0;
+    display:none;
+}
+
+#img-logo-menu{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#logo-menu{
+    padding: 4vw 3vw 0 7vw;
+}
+
+#text-icons-menu h2{
+    font-family: DINPro;
+    font-size: 1.2vw;
+    margin: 1.5vw 0;
+}
+
+#hr-menu{
+    height: auto;
+    display: inline-flex;
+    list-style: none;
+}
+
+#hr-menu li img{
+    max-width: 2.5vw;
+    float: right;
+    margin: 0.4vw;
+}
+
+#text-icons-menu{
+    color: #e5e5e5;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+    font-family:FuturaFuturisLightC;
+    font-size: 1.2vw;
+    padding-left: 5vw;
+}
+
+#adress-menu{
+    padding-bottom: 3vw;
+}
+
+#menu-close{
+    max-width: 1.4vw;
+    height: auto;
+    padding-top: 5vw;
+}
+
+#txt-menu{
+    max-width: 100%;
+    height: auto;
+    font-family: dinpro-medium;
+    font-size: 1.3vw;
+    list-style: none;
+    padding-top: 4vw;
+}
+
+#txt-menu li{
+    padding-bottom: 0.5vw;
+}
+
+#txt-menu a{
+    text-decoration: none;
+    color: #fefefe;
+}
+
+@media screen and (max-width: 769px) {
+    #img-logo, .row{
+        max-width: 100% !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    #img-logo{
+        height: 14vw !important;
+    }
+
+    #logo1{
+        width: 30vw;
+        max-height: 12vw !important;
+        margin-left: 6vw;
+        padding: 0;
+    }
+
+    #text-btn, #icons{
+        width: 49% !important;
+        display: inline-block;
+        padding: 0;
+        height: 18vw !important;
+    }
+
+    #text-btn{
+        float: left;
+    }
+
+    #icons{
+        padding-right: 3vw;
+    }
+
+    #menu-icon{
+        margin-right: 3vw;
+    }
+
+    #text-btn h1, #log-btn{
+        font-size: 4vw;
+        margin: 2vw 0 0 5vw;
+    }
+
+    #menu-icon, #icons li img{
+        max-width: 5vw !important;
+        margin-left: 1.5vw;
+    }
+
+    #calendar-upcoming{
+        float: left;
+        width: 35%;
+    }
+
+    #calendar, #upcoming-events{
+        font-size: 2.5vw;
+    }
+    #events-footer{
+        float: right;
+        width: 65%;
+        padding: 0;
+    }
+
+    #menuUl{
+         margin-left: 4vw;
+    }
+
+    #drop-arrow{
+        width: 4vw;
+        height: auto;
+    }
+
+    #drop-select, #drop-select-option{
+        font-size: 3vw;
+    }
+
+    #events{
+        width: 100% !important;
+    }
+
+    #events-p{
+        margin: 0;
+        text-align: center;
+        font-size: 4vw;
+        line-height: 4vw;
+    }
+
+    #event1, #event2, #event3, #event4{
+        max-width: 550px !important;
+    }
+
+    .img-ev{
+        width: 100% !important;
+        height: auto;
+    }
+
+    #img-logo-menu{
+        max-width: 100%!important;
+        text-align: center;
+    }
+
+    #text-icons-menu{
+        width: 49% !important;
+        display: inline-block;
+        float: left;
+    }
+
+    #right-col{
+        width: 39% !important;
+        display: inline-block;
+        float: left;
+    }
+
+    #right-col-icon{
+        width: 10% !important;
+        display: inline-block;
+    }
+
+    #text-icons-menu, #text-icons-menu h2, #txt-menu{
+        font-size: 3vw;
+    }
+
+    #txt-menu{
+        text-align: right;
+    }
+
+    #hr-menu li img{
+        max-width: 4vw;
+        margin: 0.7vw;
+    }
+
+    #menu-close{
+        max-width: 6vw;
+        float: right;
+        margin-top: 30vw;
+    }
+
+    #footer-logo-col{
+        width: 100% !important;
+        text-align: center;
+    }
+
+    #logo-footer{
+        height: 12vw;
+    }
+
+    #footer-p-col{
+       width:100% !important;
+       max-width: 100% !important;
+       text-align: center;
+    }
+
+    #footer-icons-col{
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center;
+    }
+
+    #adress-footer2, #adress-footer{
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    #hr-footer img{
+        width: 3vw;
+        height: auto;
+        float: none;
+        text-align: center;
+    }
+
+    #hr-footer{
+        float: none;
+        text-align: center;
+    }
+
+    #adress-footer2{
+        margin-top: -4.5vw;
+    }
+
+    #event-user-description, #event-user-photo{
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    #description-txt{
+        font-size: 2.5vw;
+    }
+
+    .p, #event-user-h3{
+        font-size: 3vw;
+    }
+}
+
