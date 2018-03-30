@@ -59,14 +59,12 @@ $("#drop-select").on("click", function () {
 
 
 $(".img-ev").on("click",function () {
-    showView("#second1");
-
+    showViews(["#second1", "#events"]);
 });
+
 $("#logo1").on("click",function () {
     showViews(["#second", "#events"]);
 });
-
-
 
 function loginPage() {
     showView("#registration");
@@ -96,3 +94,17 @@ $("#data-prot").on("click",function () {
     showView("#root");
 });
 
+$("#stand-terms").on("click",function () {
+    showView("#root");
+});
+
+var pass = $('#input-reg12');
+$('button.show-password').click(function() {
+    pass.attr('type', pass.attr('type') === 'password' ? 'text' : 'password');
+});
+
+
+var pass1 = $('#input-reg13');
+$('button.show-password1').click(function() {
+    pass1.attr('type', pass1.attr('type') === 'password' ? 'text' : 'password');
+});

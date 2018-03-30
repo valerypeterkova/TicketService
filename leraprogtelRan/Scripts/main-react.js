@@ -3,12 +3,11 @@ class Terms extends React.Component {
     render(){
         return (
             <div className="terms">
-                <div class="container" id="t-and-cond">
-                    <div class="container" id="terms-and-cond">
-                        <p id="terms-and-cond-p">The Terms and Conditions</p>
+                <div id="t-and-cond">
+                    <div id="terms-and-cond">
+                        <p id="terms-and-cond-p">THE TERMS AND CONDITIONS</p>
                     </div>
-                    <div class="clearfix"></div>
-
+                    <div id="p-txt-terms">
                     <p>1.Scope of validity
                         <br/>The Terms and Conditions apply to legal relations between patrons, on the one hand, and
                         the Berlin City Hall Foundation, on the other, concerning the latter's artistic
@@ -202,6 +201,8 @@ class Terms extends React.Component {
                         City Hall
                         Foundation. Thus the current German version is solely legally binding.</p>
 
+                        <button id="return-btn">RETURN</button>
+                    </div>
                 </div>
             </div>
         );
@@ -211,3 +212,7 @@ class Terms extends React.Component {
 ReactDOM.render(
     <Terms/>
     , root);
+
+$("#return-btn").on("click",function () {
+    showView("#registration1");
+});

@@ -49,11 +49,11 @@
     src: url(fonts/FuturaFuturisLightC[1].otf);
 }
 
-/*body{*/
-    /*font-family: FuturaFuturisC;*/
-    /*font-size: 1.2vw;*/
-    /*color: #95989a;*/
-/*}*/
+body{
+    font-family:  Arial;
+    font-size: 1.4vw;
+    color: #95989a;
+}
 #back{
     background-image: url(../Images/decorGrey@2x.png);
     background-size: 40%;
@@ -352,14 +352,14 @@
 
  }
 
-#reg-p-text, #reg-p-text1{
+#reg-p-text, #reg-p-text1, #terms-and-cond{
     max-width: 100%;
     text-align: center;
-    margin-bottom: 3vw;
+    margin-bottom: 4vw;
     padding: 0;
 }
 
-#reg-p, #reg-p1{
+#reg-p, #reg-p1, #terms-and-cond-p{
     font-family: FuturaFuturisC-Bold;
     font-size: 2.5vw;
     color:#696a6d ;
@@ -368,6 +368,10 @@
     border-bottom: 0.7vw solid #696a6d;
     line-height: 2.2vw;
     text-align: center;
+}
+
+#reg-page{
+    margin-bottom: 3vw;
 }
 
 #form-cont{
@@ -471,9 +475,9 @@ input, button{
     color: #868685;
 }
 
-#reg-page .container-fluid input{
-    width: 100%;
-}
+/*#reg-page .container-fluid input{*/
+    /*width: 100%;*/
+/*}*/
 
 #reg-page .container-fluid{
     border-bottom: 0.1vw solid #95989a;
@@ -491,22 +495,31 @@ input, button{
     float: right;
 }
 
-.span-m{
+.the-name img,.the-name1 img{
+    margin-top: 1vw;
+    margin-right: -1vw;
+}
+
+.hold-name-input,.hold-name-input1{
+    cursor: pointer;
+}
+
+.span-m,.span-m1{
     width: 90%;
     font-family: FuturaFuturisC;
     font-size: 1.5vw;
     color: #868685;
 }
-.name-m{
-    width: 70%;
-}
+/*.name-m, .name-m1{*/
+    /*width: 70%;*/
+/*}*/
 
-.hold-options{
+.hold-options, .hold-options1{
     position: absolute;
     display: none;
 }
 
-.hold-options div{
+.hold-options div,.hold-options1 div{
     /* background-color: #f3f3f3; */
     background: linear-gradient(#f9f9f9, #e8e8e8);
     padding: 5px;
@@ -516,8 +529,24 @@ input, button{
     /* border: 0.1vw solid #CCCDCE; */
 }
 
-.the-name{
+.the-name, .the-name1{
     border-bottom: 0.1vw solid #95989a;
+}
+
+#input-reg11, #input-reg12{
+    width: 90%;
+}
+
+.show-password, .show-password1{
+    float: right;
+    background-color: transparent;
+    display: inline-block;
+    width: 10%;
+}
+
+.show-password img, .show-password1 img{
+    float: right;
+    margin-top: 0.5vw;
 }
 
 .container-fluid-btn{
@@ -545,6 +574,29 @@ input, button{
 
 #root{
     display: none;
+}
+
+#p-txt-terms p{
+    margin: 1.6vw;
+    line-height: 1.6vw;
+}
+
+#return-btn{
+    background-color: #696a6d;
+    color: white;
+    font-family: FuturaFuturisC-Bold;
+    font-size: 1.5vw;
+    text-align: center;
+    width: 25%;
+    height: 2.5vw;
+    float: right;
+    margin: 10vw 2vw;
+}
+
+.container, .container-fluid{
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 #footer{
