@@ -12,13 +12,15 @@
     <script defer src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     <script defer crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script defer crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <script defer src="Scripts/main.js"></script>
+
+    <script defer src="Scripts/onClick.js"></script>
+    <script defer src="Scripts/dropFilter.js"></script>
     <script defer src='Scripts/script2.js'></script>
+    <script defer src='Scripts/confirmPassword.js'></script>
     <script defer type="text/babel" src="Scripts/main-react.js"></script>
 </head>
 <body>
@@ -35,11 +37,11 @@
     </div>
     <div class=" col-sm-3 " id="icons">
         <ul id="hr">
-            <li><a href="#"><img src="Images/icons/youtube-logo.svg"></a></li>
-            <li><a href="#"><img src="Images/icons/facebook-logo.svg"></a></li>
-            <li><a href="#"><img src="Images/icons/twitter-logo.svg"></a></li>
-            <li><a href="#"><img src="Images/icons/instagram-logo.svg"></a></li>
-            <li><a href="#"><img src="Images/icons/odnoklassniki-logo.svg"></a></li>
+            <li><a href="https://www.youtube.com/"><img src="Images/icons/youtube-logo.svg"></a></li>
+            <li><a href="https://www.facebook.com/"><img src="Images/icons/facebook-logo.svg"></a></li>
+            <li><a href="https://twitter.com/"><img src="Images/icons/twitter-logo.svg"></a></li>
+            <li><a href="https://www.instagram.com/"><img src="Images/icons/instagram-logo.svg"></a></li>
+            <li><a href="https://ok.ru/"><img src="Images/icons/odnoklassniki-logo.svg"></a></li>
             <li><a href="#"><img src="Images/icons/wi-fi-logo.svg"></a></li>
         </ul>
         <div id="menu-icon-btn" style="cursor: pointer">
@@ -228,7 +230,7 @@
                 <div class="col-sm-6 " id="already-reg">
                     <p id="log-p">I am already a customer.</p>
                     <div class="container" id="form-cont">
-                        <form action="#" method="post">
+                        <form action="#">
                             <div class="container-fluid" id="email-input-log">
                                 <input id="email-txt" type="text" name="Email" placeholder="Email">
                                 <button id="input-btn1" type="reset">&times;</button>
@@ -257,11 +259,10 @@
             </div>
             <div class="clearfix"></div>
             <div class="row container-fluid" id="reg-page">
-                <div class="col-sm-6 " id="salutation-address">
-                    <p id="sal-adr-p">Salutation and address</p>
-                    <div class="container" id="form-cont1">
-                        <form action="#">
-                            <!--method="post"-->
+                <form action="#">
+                    <div class="col-sm-6 " id="salutation-address">
+                        <p id="sal-adr-p">Salutation and address</p>
+                        <div class="container" id="form-cont1">
                             <div class='hold-name-input'>
                                 <div class='the-name'>
                                     <span class='span-m'>Mr.</span>
@@ -300,39 +301,28 @@
                             <div class="container-fluid">
                                 <input id="input-reg10" type="text" name="Country" placeholder="Country">
                             </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-6 " id="contact-info">
-                    <p id="con-info-p">Contact information</p>
-                    <div class="container" id="form-cont2">
-                        <form action="#">
+                    <div class="col-sm-6 " id="contact-info">
+                        <p id="con-info-p">Contact information</p>
+                        <div class="container" id="form-cont2">
                             <div class="container-fluid">
                                 <input id="input-reg11" type="email" name="Email" placeholder="Email">
                             </div>
-                            <!--<div class='hold-name-input1'>-->
-                                <!--<div class='the-name1'>-->
-                                    <!--<span class='span-m1'>Email</span>-->
-                                    <!--<img src="Images/down-arrow.svg" class="drop-arrow1">-->
-                                <!--</div>-->
-                                <!--<div class='hold-options1'>-->
-                                    <!--<div><span>Email</span></div>-->
-                                    <!--<div><span>Fax</span></div>-->
-                                <!--</div>-->
-                            <!--</div>-->
                             <div class="container-fluid">
                                 <input id="input-reg12" type="password" name="Password" placeholder="Password">
                                 <button type="button" class="show-password">
-                                    <img src="Images/show-password.png" alt="show-pass" />
+                                    <img src="Images/show-password.png" alt="show-pass"/>
                                 </button>
                             </div>
                             <div class="container-fluid">
                                 <input id="input-reg13" type="password" name="Confirm password"
                                        placeholder="Confirm password">
                                 <button type="button" class="show-password1">
-                                    <img src="Images/show-password.png" alt="show-pass" />
+                                    <img src="Images/show-password.png" alt="show-pass"/>
                                 </button>
                             </div>
+                            <div class="error"></div>
                             <div class="container-fluid">
                                 <input id="input-reg14" type="text" name="Phone number" placeholder="Phone number">
                             </div>
@@ -343,9 +333,11 @@
                             <div class="container-fluid-btn">
                                 <input required type="checkbox" id="ch-in-1">
                                 <div class=" container-fluid-p">
-                                    <p>I have read the notice on <span id="data-prot">data protection</span> and the content of
+                                    <p>I have read the notice on <span id="data-prot">data protection</span> and the
+                                        content of
                                         the
-                                        <span id="stand-terms">Standart Terms of Business</span> and agree to the storage of my
+                                        <span id="stand-terms">Standart Terms of Business</span> and agree to the
+                                        storage of my
                                         personal data.</p>
                                 </div>
                             </div>
@@ -355,80 +347,81 @@
                                     <p>I agree to get notifications on me Email and phone.</p>
                                 </div>
                             </div>
-                            <button id="reg-btn1" type="submit">Register</button>
-                        </form>
+                        </div>
                     </div>
-                </div>
+
+                    <button id="reg-btn1" type="submit">Register</button>
+                </form>
             </div>
         </div>
 
         <div id="root"></div>
 
-            <div class="clearfix"></div>
-            <div class="row container-fluid" id="footer">
-                <div class="col-sm-3 " id="footer-logo-col">
-                    <img src="Images/logoColoured.png" id="logo-footer">
-                </div>
-                <div class="col-sm-6 " id="footer-p-col">
-                    <p id="adress-footer">
-                        <br>Berlin City Hall
-                        <br>Freudstrasse 69, 10117 Berlin
-                        <br>Tel.: 0302223344
-                    </p>
-                </div>
-                <div class=" col-sm-3 " id="footer-icons-col">
-                    <p id="adress-footer2">
-                        <br>Fax: 0302223355
-                        <br>E-Mail: info@bsh.de
-                    </p>
-                    <ul id="hr-footer">
-                        <li><a href="#"><img src="Images/icons/youtube-logo.svg"></a></li>
-                        <li><a href="#"><img src="Images/icons/facebook-logo.svg"></a></li>
-                        <li><a href="#"><img src="Images/icons/twitter-logo.svg"></a></li>
-                        <li><a href="#"><img src="Images/icons/instagram-logo.svg"></a></li>
-                        <li><a href="#"><img src="Images/icons/odnoklassniki-logo.svg"></a></li>
-                        <li><a href="#"><img src="Images/icons/wi-fi-logo.svg"></a></li>
-                    </ul>
-                </div>
+        <div class="clearfix"></div>
+        <div class="row container-fluid" id="footer">
+            <div class="col-sm-3 " id="footer-logo-col">
+                <img src="Images/logoColoured.png" id="logo-footer">
+            </div>
+            <div class="col-sm-6 " id="footer-p-col">
+                <p id="adress-footer">
+                    <br>Berlin City Hall
+                    <br>Freudstrasse 69, 10117 Berlin
+                    <br>Tel.: 0302223344
+                </p>
+            </div>
+            <div class=" col-sm-3 " id="footer-icons-col">
+                <p id="adress-footer2">
+                    <br>Fax: 0302223355
+                    <br>E-Mail: info@bsh.de
+                </p>
+                <ul id="hr-footer">
+                    <li><a href="#"><img src="Images/icons/youtube-logo.svg"></a></li>
+                    <li><a href="#"><img src="Images/icons/facebook-logo.svg"></a></li>
+                    <li><a href="#"><img src="Images/icons/twitter-logo.svg"></a></li>
+                    <li><a href="#"><img src="Images/icons/instagram-logo.svg"></a></li>
+                    <li><a href="#"><img src="Images/icons/odnoklassniki-logo.svg"></a></li>
+                    <li><a href="#"><img src="Images/icons/wi-fi-logo.svg"></a></li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="row container-fluid" id="menu" style="z-index: 1000">
-        <div class=" col-sm-3  " id="img-logo-menu">
-            <img src="Images/logo/logoWhite.png" id="logo-menu">
-        </div>
-        <div class=" col-sm-6 " id="text-icons-menu">
-            <h2>Berlin City Hall | Events and Tickets</h2>
-            <ul id="hr-menu">
-                <li><a href="#"><img src="Images/menu-icons/youtube-logomenu.svg"></a></li>
-                <li><a href="#"><img src="Images/menu-icons/facebook-logomenu.svg"></a></li>
-                <li><a href="#"><img src="Images/menu-icons/twitter-logomenu.svg"></a></li>
-                <li><a href="#"><img src="Images/menu-icons/instagram-logomenu.svg"></a></li>
-                <li><a href="#"><img src="Images/menu-icons/odnoklassniki-logomenu.svg"></a></li>
-                <li><a href="#"><img src="Images/menu-icons/wi-fi-logomenu.svg"></a></li>
-            </ul>
-            <p id="adress-menu">
-                <br>Berlin City Hall
-                <br>Freudstrasse 69, 10117 Berlin
-                <br>Tel.: 0302223344
-                <br>Fax: 0302223355
-                <br>E-Mail: info@bsh.de
-            </p>
-        </div>
-        <div class=" col-sm-2 " id="right-col">
-            <ul id="txt-menu">
-                <li id="loginout-btn-menu">LOGIN/OUT</li>
-                <li id="events-btn-menu">EVENTS</li>
-                <li id="shoppingcart-btn-menu">SHOPPING CART</li>
-                <li id="hallsscheme-btn-menu">HALLS SCHEME</li>
-                <li id="aboutus-btn-menu">ABOUT US</li>
-            </ul>
-        </div>
-        <div class=" col-sm-1" id="right-col-icon">
-            <img src="Images/menu-icons/menu_icon_close.svg" id="menu-close" style="cursor: pointer">
-        </div>
+<div class="row container-fluid" id="menu" style="z-index: 1000">
+    <div class=" col-sm-3  " id="img-logo-menu">
+        <img src="Images/logo/logoWhite.png" id="logo-menu">
     </div>
+    <div class=" col-sm-6 " id="text-icons-menu">
+        <h2>Berlin City Hall | Events and Tickets</h2>
+        <ul id="hr-menu">
+            <li><a href="#"><img src="Images/menu-icons/youtube-logomenu.svg"></a></li>
+            <li><a href="#"><img src="Images/menu-icons/facebook-logomenu.svg"></a></li>
+            <li><a href="#"><img src="Images/menu-icons/twitter-logomenu.svg"></a></li>
+            <li><a href="#"><img src="Images/menu-icons/instagram-logomenu.svg"></a></li>
+            <li><a href="#"><img src="Images/menu-icons/odnoklassniki-logomenu.svg"></a></li>
+            <li><a href="#"><img src="Images/menu-icons/wi-fi-logomenu.svg"></a></li>
+        </ul>
+        <p id="adress-menu">
+            <br>Berlin City Hall
+            <br>Freudstrasse 69, 10117 Berlin
+            <br>Tel.: 0302223344
+            <br>Fax: 0302223355
+            <br>E-Mail: info@bsh.de
+        </p>
+    </div>
+    <div class=" col-sm-2 " id="right-col">
+        <ul id="txt-menu">
+            <li id="loginout-btn-menu">LOGIN/OUT</li>
+            <li id="events-btn-menu">EVENTS</li>
+            <li id="shoppingcart-btn-menu">SHOPPING CART</li>
+            <li id="hallsscheme-btn-menu">HALLS SCHEME</li>
+            <li id="aboutus-btn-menu">ABOUT US</li>
+        </ul>
+    </div>
+    <div class=" col-sm-1" id="right-col-icon">
+        <img src="Images/menu-icons/menu_icon_close.svg" id="menu-close" style="cursor: pointer">
+    </div>
+</div>
 
 </body>
 </html>

@@ -549,6 +549,12 @@ input, button{
     margin-top: 0.5vw;
 }
 
+.error{
+    font-family: FuturaFuturisLightC;
+    font-size: 0.9vw;
+    color: red;
+}
+
 .container-fluid-btn{
     display: inline-block;
     margin-bottom: 1vw;
