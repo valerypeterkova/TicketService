@@ -13,7 +13,6 @@ var registration_data = {
     country:$("#input-reg10").val,
     email:$("#input-reg11").val,
     password:$("#input-reg12").val,
-    confirmPassword:$("#input-reg13").val,
     phone:$("#input-reg14").val,
     additionalPhone:$("#input-reg15").val
 };
