@@ -21,6 +21,7 @@
     <script defer src="Scripts/dropFilter.js"></script>
     <script defer src='Scripts/script2.js'></script>
     <script defer src='Scripts/confirmPassword.js'></script>
+    <script defer src='Scripts/ajaxRequestResponse.js'></script>
     <script defer type="text/babel" src="Scripts/main-react.js"></script>
 </head>
 <body>
@@ -239,8 +240,8 @@
                                 <input id="pass-txt" type="password" name="Password" placeholder="Password">
                                 <button id="input-btn2" type="reset">&times;</button>
                             </div>
-                            <br><a href="#" id="forgot-link">Forgotten password?</a>
-                            <br><input type="submit" value="Login" id="log-btn-input">
+                            <br><p style="cursor: pointer" id="forgot-link">Forgotten password?</p>
+                            <br><input type="button" value="Login" id="log-btn-input">
                         </form>
                     </div>
                 </div>
@@ -255,7 +256,7 @@
         </div>
         <div class="container" id="registration1">
             <div class="container" id="reg-p-text1">
-                <p id="reg-p1">REGISTRATION</p></a>
+                <p id="reg-p1">REGISTRATION</p><
             </div>
             <div class="clearfix"></div>
             <div class="row container-fluid" id="reg-page">
@@ -350,7 +351,7 @@
                         </div>
                     </div>
 
-                    <button id="reg-btn1" type="submit">Register</button>
+                    <button id="reg-btn1" type="button">Register</button>
                 </form>
             </div>
         </div>
