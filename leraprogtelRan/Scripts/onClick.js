@@ -41,12 +41,13 @@ $("#menu-icon-btn").on("click",function () {
 
 
 
-$(".img-ev").on("click",function () {
-    showViews(["#second1", "#events"]);
-});
+// $(".img-ev").on("click",function () {
+//     showViews(["#second1", "#events"]);
+// });
 
 $("#logo1").on("click",function () {
     showViews(["#second", "#events"]);
+    $("#events-drop-menu").css({"display":"block"});
 });
 
 function loginPage() {

@@ -201,6 +201,7 @@ body{
 
 #events-drop-menu{
     width: 25%;
+    /*display: none*/
 }
 
 #events-p-text{
@@ -282,29 +283,60 @@ body{
     margin-bottom: 2vw;
 }
 
-#event1{
-    padding: 0;
-    margin: 0;
-}
+/*#event1{*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+/*}*/
 
-#event2{
-    padding: 0;
-    margin: 0;
-}
+/*#event2{*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+/*}*/
 
-#event3{
-    padding: 0;
-    margin: 0;
-}
+/*#event3{*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+/*}*/
 
-#event4{
-    padding: 0;
-    margin: 0;
+/*#event4{*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+/*}*/
+.holdArtist{
+    display: block;
+    border-bottom: 0.5vw solid #ffc800;
+    width: 95%;
+    margin: 0 auto;
+    color: #ffc800;
+    font-family: FuturaFuturisC-Bold;
+    font-size: 2vw;
+    position: absolute;
+    bottom: 3vw;
+    left: 0.5vw;
 }
+.holdTitle{
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+    color: #ffc800;
+    font-family: FuturaFuturisC-Bold;
+    font-size: 1.2vw;
+    position: absolute;
+    bottom: 1vw;
+    left: 0.5vw;
 
-.img-ev{
-    height: 18vw;
-    padding: 0.7vw 0.7vw 0 0 ;
+}
+.dataTime{
+    position: absolute;
+    top: 1.5vw;
+    right: 2vw;
+    font-size: 1vw;
+}
+.eventsImage{
+    margin-right: 1vw !important;
+    display: inline-block;
+    width: 30vw !important;
+
 }
 
 #events11, #events22{

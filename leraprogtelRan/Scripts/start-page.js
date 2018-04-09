@@ -20,7 +20,9 @@ function event_success(data) {
     loadEvents(events)
 }
 
+
 function loadEvents(events) {
+
     let columnEvent;
     let holdEvent;
     for (let i = 0; i < events.length; i++) {
@@ -28,15 +30,15 @@ function loadEvents(events) {
             columnEvent = $(`<div class="row" id="events11"></div>`);
             $("#second").append(columnEvent);
         }
-        holdEvent = $(`<div class=" col-sm-6  container-fluid" id="event1">`);
+        holdEvent = $(`<div class=" col-sm-6  container-fluid eventsImage">`);
         if (columnEvent) columnEvent.append(holdEvent);
-        let holdArtist = $(`<p></p>`)
+        let holdArtist = $(`<p class="holdArtist"></p>`)
         holdArtist.text(events[i].artist);
         holdEvent.append(holdArtist);
-        let holdData = $(`<p></p>`)
-        holdData.text(events[i].data);
+        let holdData = $(`<p class="dataTime"></p>`)
+        holdData.text(events[i].date);
         holdEvent.append(holdData);
-        let holdTitle = $(`<p></p>`)
+        let holdTitle = $(`<p class="holdTitle"></p>`)
         holdTitle.text(events[i].title);
         holdEvent.append(holdTitle);
         let holdImg = $(`<img>`)
@@ -47,16 +49,20 @@ function loadEvents(events) {
         })
     }
 }
-
+// if(loadEvents(events)){
+//     $("#events-drop-menu").css({"display":"block"})
+// }else {
+//     $("#events-drop-menu").css({"display":"none"})
+// }
 function openEvent(event) {
     $('#second1').empty();
     let columnImage = $(`<div class="col-sm-6 " id="event-user-photo"></div>`);
     $("#second1").append(columnImage);
 
-    let containerImage = $(`<div class="container" style="margin: 0; padding: 0"></div>`);
+    let containerImage = $(`<div class="container" style="margin: 0; padding: 0; overflow: hidden"></div>`);
     columnImage.append(containerImage);
 
-    let theImage = $(`<img src="Images/div/event1.jpg" style="height: 34vw">`);
+    let theImage = $(`<img style="height: 34vw; position: relative; right: 50%; max-width: 200% !important;">`);
     containerImage.append(theImage);
     theImage.attr("src", event.imageUrl);
 
@@ -89,6 +95,7 @@ function openEvent(event) {
     let buyBtn = $(`<p class="p" id="buy-btn">BUY TICKETS</p>`);
     columnDescription.append(buyBtn);
     showViews(["#second1", "#events"]);
+    $("#events-drop-menu").css({"display":"none"});
 }
 
 function eventClick(id) {
@@ -106,7 +113,7 @@ function eventClick(id) {
 
 function ev_success(data) {
     console.log(data);
-    openEvent(data)
+    openEvent(data);
 }
 
 function ev_error() {
