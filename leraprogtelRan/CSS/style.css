@@ -331,15 +331,20 @@ body{
     font-size: 1.1vw;
 }
 
-.p {
+.p, .p1 {
     font-family: FuturaFuturisC-Bold;
     font-size: 1.7vw;
     color: #95989a;
 }
 
+.p1 {
+    color: #ffc800 ;
+}
+
 #buy-btn{
     cursor: pointer;
     color: #ffc800 ;
+    margin-top: 1.5vw;
  }
 
 #registration, #registration1{
@@ -504,15 +509,12 @@ input, button{
     cursor: pointer;
 }
 
-.span-m,.span-m1{
+.span-m,.span-m1 {
     width: 90%;
     font-family: FuturaFuturisC;
     font-size: 1.5vw;
     color: #868685;
 }
-/*.name-m, .name-m1{*/
-    /*width: 70%;*/
-/*}*/
 
 .hold-options, .hold-options1{
     position: absolute;
@@ -652,6 +654,45 @@ input, button{
     margin: 0;
     padding: 0;
     border: 0;
+}
+
+.input-confirm{
+    /*max-width: 30%;*/
+    max-width: 100%;
+    width: 400px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#confir-code{
+    border-bottom: #868685 solid 1px;
+    font-family: FuturaFuturisLightC;
+    color: #868685;
+    font-size: 1.5vw;
+    background-color: transparent;
+    width: 100%;
+}
+
+#conf-code{
+    background-color: #696a6d;
+    color: white;
+    font-family: FuturaFuturisC-Bold;
+    font-size: 1.5vw;
+    text-align: center;
+    width: 50%;
+    /*height: 2.5vw;*/
+    margin-top: 2em;
+    padding: 0.1em;
+}
+.blur{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    z-index: 9998;
 }
 
 #menu{

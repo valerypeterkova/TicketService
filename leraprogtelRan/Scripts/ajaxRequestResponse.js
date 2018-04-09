@@ -1,4 +1,3 @@
-var BASE_URL = "https://ticketservice2018.herokuapp.com";
 
 
 $('#reg-btn1').on('click', function () {
@@ -71,45 +70,98 @@ $('#forgot-link').on('click', function () {
     ;
 });
 
+function blurMain() {
+    $("#main").css("filter", "blur(10px)");
+    $('#back').css("filter", "blur(10px)")
+}
+
+function hideBlurMain() {
+    $("#main").css("filter", "blur(0px)");
+    $('#back').css("filter", "blur(0px)")
+}
 
 function reg_success(data) {
+    console.log(data);
     if (data.success) {
-        console.log("ok");
-        //TODO
-    } else {
-        console.log("error_500+");
+        alert("A message with the confirmation code has been sent to your email");
+        blurMain();
+        $(".blur").css('display', 'flex');
     }
 }
 
-function reg_error() {
-    console.log("error");
+function reg_error(jqXHR) {
+    if(jqXHR.status == 400){
+        alert("Invalid email")
+    }else if(jqXHR.status == 500){
+        alert("Database Error”/”JSON parsing problem")
+    }else if(jqXHR.status == 501){
+        alert("There is already a user with this email")
+    }else{
+        alert("Unknown exception")
+    }
 }
 
 function forgotPsw_success(data) {
-    console.log(data);
-    if (data.success) {
-        console.log("ok");
-        //TODO
-    } else {
-        console.log("error_500+");
-    }
+    alert("A message with new password has been sent to your email");
+    loginPage();
 }
 
-function forgotPsw_error() {
-    console.log("error");
+function forgotPsw_error(jqXHR) {
+    if(jqXHR.status == 400){
+        alert("Invalid email")
+    }else if(jqXHR.status == 500){
+        alert("Database Error")
+    }else if(jqXHR.status == 501){
+        alert("There is no user with this email")
+    }else{
+        alert("Unknown exception")
+    }
 }
 
 
 function log_success(data) {
+    alert("Login success");
+    userMail = data.email;
     console.log(data);
-    if (data.success) {
-        console.log("ok");
-        //TODO
-    } else {
-        console.log("error_500+");
+    showViews(["#second", "#events"]);
+}
+
+function log_error(jqXHR) {
+    if(jqXHR.status == 500){
+        alert("Database Error")
+    }else if(jqXHR.status == 501){
+        alert("Wrong email/password")
+    }else{
+        alert("Unknown exception")
     }
 }
 
-function log_error() {
-    console.log("error");
+$('#conf-code').on('click', function () {
+    var code = $('#confir-code').val();
+    $.ajax({
+        headers: {Accept: "application/json", "Content-Type": "application/json"},
+        type: "GET",
+        dataType: "json",
+        url: (BASE_URL + "/confirmation"+"?code="+code),
+        success: code_success,
+        error: code_error
+    })
+    ;
+});
+
+function code_success(data) {
+    hideBlurMain();
+    $(".blur").css('display', 'none');
+    alert("Congrats! Your registration is finished");
+    loginPage();
+}
+
+function code_error(jqXHR) {
+    if(jqXHR.status == 500){
+        alert("Database Error”/”JSON parsing problem")
+    }else if(jqXHR.status == 501){
+        alert("Wrong confirmation code")
+    }else{
+        alert("Unknown exception")
+    }
 }

@@ -17,12 +17,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
     <script defer src="Scripts/onClick.js"></script>
     <script defer src="Scripts/dropFilter.js"></script>
     <script defer src='Scripts/script2.js'></script>
     <script defer src='Scripts/confirmPassword.js'></script>
     <script defer src='Scripts/ajaxRequestResponse.js'></script>
     <script defer type="text/babel" src="Scripts/main-react.js"></script>
+    <script defer src="Scripts/start-page.js"></script>
 </head>
 <body>
 <div id="back"></div>
@@ -51,7 +53,13 @@
     </div>
 </div>
 
-
+<div>
+    <div class="blur">
+        <div class="input-confirm">
+            <input id="confir-code" placeholder="Confirmation code">
+            <button id="conf-code">Submit</button>
+        </div>
+    </div>
 <div class="row container-fluid" id="main">
     <div class="col-sm-3" id="calendar-upcoming">
         <div class="container-fluid" id="#calendar2">
@@ -166,59 +174,59 @@
                 <div class=" col-sm-9" id="events-p-text">
                     <a href="#"><p id="events-p">EVENTS</p></a>
                 </div>
-                <div class="col-sm-3 " id="events-drop-menu">
-                    <div style="display: inline-block; float: right; margin-right: 10vw">
-                        <img src="Images/down-arrow.svg" id="drop-arrow">
-                        <div id="menuUl">
-                            <div id="drop-select"></div>
-                            <ul id="drop-select-option"></ul>
-                        </div>
-                    </div>
-                </div>
+                <!--<div class="col-sm-3 " id="events-drop-menu">-->
+                    <!--<div style="display: inline-block; float: right; margin-right: 10vw">-->
+                        <!--<img src="Images/down-arrow.svg" id="drop-arrow">-->
+                        <!--<div id="menuUl">-->
+                            <!--<div id="drop-select"></div>-->
+                            <!--<ul id="drop-select-option"></ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
             <div class="clearfix"></div>
             <!--//coderjimoe-->
             <div class="row container-fluid" id="second">
-                <div class=" col-sm-6 " id="events11">
-                    <div class="container-fluid" id="event1">
-                        <img src="Images/div/ev1.jpg" class="img-ev" id="img-ev1" style="cursor: pointer">
-                    </div>
-                    <div class="container-fluid" id="event3">
-                        <img src="Images/div/ev3.jpg" class="img-ev" style="cursor: pointer">
-                    </div>
-                </div>
-                <div class="col-sm-6 " id="events22">
-                    <div class="container-fluid" id="event2">
-                        <img src="Images/div/ev2.jpg" class="img-ev" style="cursor: pointer">
-                    </div>
-                    <div class="container-fluid" id="event4">
-                        <img src="Images/div/ev4.jpg" class="img-ev" style="cursor: pointer">
-                    </div>
-                </div>
+                <!--<div class=" col-sm-6 " id="events11">-->
+                    <!--<div class="container-fluid" id="event1">-->
+                        <!--<img src="Images/div/ev1.jpg" class="img-ev" id="img-ev1" style="cursor: pointer">-->
+                    <!--</div>-->
+                    <!--<div class="container-fluid" id="event3">-->
+                        <!--<img src="Images/div/ev3.jpg" class="img-ev" style="cursor: pointer">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6 " id="events22">-->
+                    <!--<div class="container-fluid" id="event2">-->
+                        <!--<img src="Images/div/ev2.jpg" class="img-ev" style="cursor: pointer">-->
+                    <!--</div>-->
+                    <!--<div class="container-fluid" id="event4">-->
+                        <!--<img src="Images/div/ev4.jpg" class="img-ev" style="cursor: pointer">-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
             <div class="row container-fluid" id="second1">
-                <div class="col-sm-6 " id="event-user-photo">
-                    <div class="container" style="margin: 0; padding: 0">
-                        <img src="Images/div/event1.jpg" style="height: 34vw">
-                    </div>
-                </div>
-                <div class="col-sm-6 " id="event-user-description">
-                    <h3 id="event-user-h3">Lady Gaga</h3>
-                    <p id="description-txt">
-                        Since her breakthrough with 'The Fame', the legendary Lady Gaga
-                        has made it to the top of the charts and into the hearts
-                        of millions of fans in no time. Also through her extravagant
-                        clothing style and ingenious shows, the talented 'bird of paradise pop music'
-                        draws attention again and is today the first and most successful musician in
-                        the world with four number 1 albums in a row. Absolutely
-                        live experience!
-                    </p>
-                    <p class="p">Date: </p>
-                    <p class="p">Tickets avaliable - </p>
-                    <p class="p">Price range: </p>
-                    <br>
-                    <p class="p" id="buy-btn">BUY TICKETS</p>
-                </div>
+                <!--<div class="col-sm-6 " id="event-user-photo">-->
+                    <!--<div class="container" style="margin: 0; padding: 0">-->
+                        <!--<img src="Images/div/event1.jpg" style="height: 34vw">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-6 " id="event-user-description">-->
+                    <!--<h3 id="event-user-h3">Lady Gaga</h3>-->
+                    <!--<p id="description-txt">-->
+                        <!--Since her breakthrough with 'The Fame', the legendary Lady Gaga-->
+                        <!--has made it to the top of the charts and into the hearts-->
+                        <!--of millions of fans in no time. Also through her extravagant-->
+                        <!--clothing style and ingenious shows, the talented 'bird of paradise pop music'-->
+                        <!--draws attention again and is today the first and most successful musician in-->
+                        <!--the world with four number 1 albums in a row. Absolutely-->
+                        <!--live experience!-->
+                    <!--</p>-->
+                    <!--<p class="p">Date: </p>-->
+                    <!--<p class="p">Tickets avaliable - </p>-->
+                    <!--<p class="p">Price range: </p>-->
+                    <!--<br>-->
+                    <!--<p class="p" id="buy-btn">BUY TICKETS</p>-->
+                <!--</div>-->
             </div>
         </div>
 
@@ -256,7 +264,7 @@
         </div>
         <div class="container" id="registration1">
             <div class="container" id="reg-p-text1">
-                <p id="reg-p1">REGISTRATION</p><
+                <p id="reg-p1">REGISTRATION</p>
             </div>
             <div class="clearfix"></div>
             <div class="row container-fluid" id="reg-page">
@@ -387,7 +395,7 @@
         </div>
     </div>
 </div>
-
+</div>
 <div class="row container-fluid" id="menu" style="z-index: 1000">
     <div class=" col-sm-3  " id="img-logo-menu">
         <img src="Images/logo/logoWhite.png" id="logo-menu">

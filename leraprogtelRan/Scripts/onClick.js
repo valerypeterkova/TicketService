@@ -1,3 +1,7 @@
+var BASE_URL = "https://ticketservice2018.herokuapp.com";
+var events;
+var userMail;
+
 var arr = ["#menu",
     "#root",
     "#drop-select-option",
@@ -56,7 +60,12 @@ function menuClose() {
 $("#log-container").on("click",loginPage);
 
 $("#loginout-btn-menu").on("click", function () {
-    loginPage();
+    if(userMail){
+        userMail = null;
+        alert("Logout success");
+    }else {
+        loginPage();
+    }
     menuClose();
 });
 
@@ -87,3 +96,4 @@ var pass1 = $('#input-reg13');
 $('button.show-password1').click(function() {
     pass1.attr('type', pass1.attr('type') === 'password' ? 'text' : 'password');
 });
+
