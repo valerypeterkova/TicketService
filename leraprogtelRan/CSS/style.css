@@ -129,6 +129,16 @@ body{
     text-align: right;
 }
 
+#search-input:-webkit-autofill,
+#search-input:-webkit-autofill:hover,
+#search-input:-webkit-autofill:focus,
+#search-input:-webkit-autofill:active{
+    -webkit-transition: color 9999s ease-out ;
+    -webkit-transition: background-color 9999s ease-out;
+    -webkit-transition-delay: 9999s;
+}
+
+
 #menu-icon{
     max-width: 1.8vw;
 }
@@ -139,19 +149,19 @@ body{
     right: 0;
 }
 
-#hr{
-    height: auto;
-    display: inline-flex;
-    justify-content: end;
-    list-style: none;
-}
+/*#hr{*/
+    /*height: auto;*/
+    /*display: inline-flex;*/
+    /*justify-content: end;*/
+    /*list-style: none;*/
+/*}*/
 
-#icons li img{
-    max-width: 1.8vw;
-    float: right;
-    padding: 0;
-    margin: 0.3vw;
-}
+/*#icons li img{*/
+    /*max-width: 1.8vw;*/
+    /*float: right;*/
+    /*padding: 0;*/
+    /*margin: 0.3vw;*/
+/*}*/
 
 #main{
     background: rgba(134,134,133,0.1);
@@ -199,31 +209,32 @@ body{
     margin-top: 2vw;
 }
 
-#events-drop-menu{
-    width: 25%;
-    /*display: none*/
-}
-
 #events-p-text{
     padding: 0;
     margin: 0 auto;
     text-align: center
 }
 
-#events-p{
+#events-p-text p{
+    margin-left: 12vw;
+}
+
+.caption-txt{
     font-family: FuturaFuturisC-Bold;
     font-size: 2.5vw;
-    color:#868685 ;
+    color:#696a6d ;
     text-decoration: none;
     display: inline-block;
-    margin-left: 14vw;
-    border-bottom: 0.7vw solid #868685;
+    border-bottom: 0.7vw solid #696a6d;
     line-height: 2.2vw;
+    cursor: pointer;
+    text-align: center;
 }
 
 #events-drop-menu{
     display: inline-block;
     padding: 0;
+    width: 25%;
 }
 
 #drop-arrow{
@@ -249,6 +260,7 @@ body{
     text-align: left;
     cursor: pointer;
     display: inline-block;
+    text-transform: uppercase;
 }
 
 #drop-select-option{
@@ -262,6 +274,7 @@ body{
     display: none;
     cursor: pointer;
     margin-top: 1.5vw;
+    text-transform: uppercase;
 }
 
 #drop-select-option li{
@@ -283,25 +296,6 @@ body{
     margin-bottom: 2vw;
 }
 
-/*#event1{*/
-    /*padding: 0;*/
-    /*margin: 0;*/
-/*}*/
-
-/*#event2{*/
-    /*padding: 0;*/
-    /*margin: 0;*/
-/*}*/
-
-/*#event3{*/
-    /*padding: 0;*/
-    /*margin: 0;*/
-/*}*/
-
-/*#event4{*/
-    /*padding: 0;*/
-    /*margin: 0;*/
-/*}*/
 .holdArtist{
     display: block;
     border-bottom: 0.5vw solid #ffc800;
@@ -335,7 +329,8 @@ body{
 .eventsImage{
     margin-right: 1vw !important;
     display: inline-block;
-    width: 30vw !important;
+    width: 29vw !important;
+    cursor: pointer;
 
 }
 
@@ -349,12 +344,6 @@ body{
     display: none;
     color: #95989a;
     margin-bottom: 3vw;
-}
-
-#event-user-h3{
-    font-family: FuturaFuturisC-Bold;
-    font-size: 1.7vw;
-    color: #95989a;
 }
 
 #description-txt{
@@ -396,17 +385,6 @@ body{
     padding: 0;
 }
 
-#reg-p, #reg-p1, #terms-and-cond-p{
-    font-family: FuturaFuturisC-Bold;
-    font-size: 2.5vw;
-    color:#696a6d ;
-    text-decoration: none;
-    display: inline-block;
-    border-bottom: 0.7vw solid #696a6d;
-    line-height: 2.2vw;
-    text-align: center;
-}
-
 #reg-page{
     margin-bottom: 3vw;
 }
@@ -427,12 +405,6 @@ body{
 input, button{
     border: none;
     padding: 0;
-}
-
-#log-p, #new-reg-p, #sal-adr-p, #con-info-p{
-    font-family: FuturaFuturisC-Bold;
-    color: #868685;
-    font-size: 1.5vw;
 }
 
 #input-btn1, #input-btn2{
@@ -521,7 +493,7 @@ input, button{
     padding: 0;
 }
 
-#sal-adr-p, #con-info-p{
+#contact-info p, #salutation-address p{
     margin-bottom: 2vw;
 }
 
@@ -554,13 +526,11 @@ input, button{
 }
 
 .hold-options div,.hold-options1 div{
-    /* background-color: #f3f3f3; */
     background: linear-gradient(#f9f9f9, #e8e8e8);
     padding: 5px;
     font-family: FuturaFuturisC;
     font-size: 1.5vw;
     color: #868685;
-    /* border: 0.1vw solid #CCCDCE; */
 }
 
 .the-name, .the-name1{
@@ -736,6 +706,7 @@ input, button{
     width: 100%;
     top:0;
     display:none;
+    z-index: 10000;
 }
 
 #img-logo-menu{
@@ -881,10 +852,7 @@ input, button{
     }
 
     #events-p{
-        margin: 0;
-        text-align: center;
-        font-size: 4vw;
-        line-height: 4vw;
+        ;
     }
 
     #event1, #event2, #event3, #event4{
@@ -988,7 +956,7 @@ input, button{
         font-size: 2.5vw;
     }
 
-    .p, #event-user-h3{
+    .p{
         font-size: 3vw;
     }
 }

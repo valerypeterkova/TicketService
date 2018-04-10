@@ -1,5 +1,3 @@
-
-
 $('#reg-btn1').on('click', function () {
 
     var registration_data = {
@@ -71,8 +69,8 @@ $('#forgot-link').on('click', function () {
 });
 
 function blurMain() {
-    $("#main").css("filter", "blur(10px)");
-    $('#back').css("filter", "blur(10px)")
+    $("#main").css("filter", "blur(30px)");
+    $('#back').css("filter", "blur(30px)")
 }
 
 function hideBlurMain() {
@@ -89,14 +87,15 @@ function reg_success(data) {
     }
 }
 
+
 function reg_error(jqXHR) {
-    if(jqXHR.status == 400){
+    if (jqXHR.status == 400) {
         alert("Invalid email")
-    }else if(jqXHR.status == 500){
+    } else if (jqXHR.status == 500) {
         alert("Database Error”/”JSON parsing problem")
-    }else if(jqXHR.status == 501){
+    } else if (jqXHR.status == 501) {
         alert("There is already a user with this email")
-    }else{
+    } else {
         alert("Unknown exception")
     }
 }
@@ -107,13 +106,13 @@ function forgotPsw_success(data) {
 }
 
 function forgotPsw_error(jqXHR) {
-    if(jqXHR.status == 400){
+    if (jqXHR.status == 400) {
         alert("Invalid email")
-    }else if(jqXHR.status == 500){
+    } else if (jqXHR.status == 500) {
         alert("Database Error")
-    }else if(jqXHR.status == 501){
+    } else if (jqXHR.status == 501) {
         alert("There is no user with this email")
-    }else{
+    } else {
         alert("Unknown exception")
     }
 }
@@ -127,11 +126,11 @@ function log_success(data) {
 }
 
 function log_error(jqXHR) {
-    if(jqXHR.status == 500){
+    if (jqXHR.status == 500) {
         alert("Database Error")
-    }else if(jqXHR.status == 501){
+    } else if (jqXHR.status == 501) {
         alert("Wrong email/password")
-    }else{
+    } else {
         alert("Unknown exception")
     }
 }
@@ -142,7 +141,7 @@ $('#conf-code').on('click', function () {
         headers: {Accept: "application/json", "Content-Type": "application/json"},
         type: "GET",
         dataType: "json",
-        url: (BASE_URL + "/confirmation"+"?code="+code),
+        url: (BASE_URL + "/confirmation" + "?code=" + code),
         success: code_success,
         error: code_error
     })
@@ -157,11 +156,59 @@ function code_success(data) {
 }
 
 function code_error(jqXHR) {
-    if(jqXHR.status == 500){
+    if (jqXHR.status == 500) {
         alert("Database Error”/”JSON parsing problem")
-    }else if(jqXHR.status == 501){
+    } else if (jqXHR.status == 501) {
         alert("Wrong confirmation code")
-    }else{
+    } else {
         alert("Unknown exception")
     }
+    hideBlurMain();
+    $(".blur").css('display', 'none');
+    loginPage();
 }
+
+
+$("#new-reg-btn2").on("click", function () {
+    blurMain();
+    $(".blur").css('display', 'flex');
+    menuClose();
+});
+
+$('#search-img').on('click', function () {
+    $.ajax({
+        headers: {Accept: "application/json", "Content-Type": "application/json"},
+        type: "GET",
+        dataType: "json",
+        url: (BASE_URL + "/search" +"?text="+ $("#search-input").val()),
+        success: search_success,
+        error: search_error
+    });
+    $('#search-input').val('');
+
+});
+
+function search_success(data) {
+    hideBlurMain();
+    $(".blur").css('display', 'none');
+    search(data.events);
+}
+
+function search_error() {
+    $("#search").append("<div></div>").text("No matches");
+    showView("#search");
+}
+
+function  search(events) {
+    if(events.events==0){
+        $("#search").append("<div></div>").text("No matches found");
+        showViews(["#events","#search"]);
+    }
+    $("#second").empty();
+    loadEvents(events);
+    showViews(["#events","#second"]);
+    console.log(events)
+}
+
+
+

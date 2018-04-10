@@ -2,7 +2,6 @@ var BASE_URL = "https://ticketservice2018.herokuapp.com";
 
 
 $(document).ready(function () {
-    console.log(userMail)
     $.ajax({
         headers: {Accept: "application/json", "Content-Type": "application/json"},
         type: "GET",
@@ -17,7 +16,8 @@ $(document).ready(function () {
 function event_success(data) {
     console.log(data)
     events = data.events;
-    loadEvents(events)
+    loadEvents(events);
+    $("#events-drop-menu").css({"display":"block"});
 }
 
 
@@ -41,7 +41,7 @@ function loadEvents(events) {
         let holdTitle = $(`<p class="holdTitle"></p>`)
         holdTitle.text(events[i].title);
         holdEvent.append(holdTitle);
-        let holdImg = $(`<img>`)
+        let holdImg = $(`<img>`);
         holdImg.attr("src", events[i].imageUrl);
         holdEvent.append(holdImg);
         holdEvent.on("click", () => {
@@ -49,11 +49,7 @@ function loadEvents(events) {
         })
     }
 }
-// if(loadEvents(events)){
-//     $("#events-drop-menu").css({"display":"block"})
-// }else {
-//     $("#events-drop-menu").css({"display":"none"})
-// }
+
 function openEvent(event) {
     $('#second1').empty();
     let columnImage = $(`<div class="col-sm-6 " id="event-user-photo"></div>`);
@@ -69,7 +65,7 @@ function openEvent(event) {
     let columnDescription = $(`<div class="col-sm-6 " id="event-user-description"></div>`);
     $("#second1").append(columnDescription);
 
-    let artistH = $(`<h3 id="event-user-h3"></h3>`);
+    let artistH = $(`<h3 class="p"></h3>`);
     columnDescription.append(artistH);
     artistH.text(event.artist);
 
@@ -123,3 +119,8 @@ function ev_error() {
 function event_error() {
     alert("error")
 }
+
+
+
+
+

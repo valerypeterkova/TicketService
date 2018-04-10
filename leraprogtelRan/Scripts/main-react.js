@@ -5,7 +5,7 @@ class Terms extends React.Component {
             <div className="terms">
                 <div id="t-and-cond">
                     <div id="terms-and-cond">
-                        <p id="terms-and-cond-p">THE TERMS AND CONDITIONS</p>
+                        <p className="caption-txt">THE TERMS AND CONDITIONS</p>
                     </div>
                     <div id="p-txt-terms">
                     <p>1.Scope of validity

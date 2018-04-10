@@ -9,7 +9,7 @@ var arr = ["#menu",
     "#second",
     "#events",
     "#registration",
-    "#registration1"];
+    "#registration1", ".blur", "#search"];
 
 function showView(elem) {
     for(i = 0; i < arr.length; i++){
@@ -21,12 +21,14 @@ function showView(elem) {
     }
 }
 
+
 function showViews(elems) {
     for(i = 0; i < arr.length; i++){
         if(elems.includes(arr[i])){
             $(arr[i]).css({"display":"block"});
         }else{
             $(arr[i]).css({"display":"none"});
+
         }
     }
 }
@@ -46,12 +48,19 @@ $("#menu-icon-btn").on("click",function () {
 // });
 
 $("#logo1").on("click",function () {
+    $("#second").empty();
+    loadEvents(events);
     showViews(["#second", "#events"]);
     $("#events-drop-menu").css({"display":"block"});
+    $(".blur").css('display', 'none');
+    hideBlurMain();
 });
 
 function loginPage() {
     showView("#registration");
+    $(".blur").css('display', 'none');
+    hideBlurMain();
+    menuClose();
 }
 
 function menuClose() {
@@ -67,12 +76,19 @@ $("#loginout-btn-menu").on("click", function () {
     }else {
         loginPage();
     }
+    $(".blur").css('display', 'none');
+    hideBlurMain();
     menuClose();
+
 });
 
 $("#events-btn-menu").on("click", function () {
+    $("#second").empty();
+    loadEvents(events);
     showViews(["#events", "#second"]);
     menuClose();
+    $(".blur").css('display', 'none');
+    hideBlurMain();
 });
 
 $("#new-reg-btn1").on("click",function () {
