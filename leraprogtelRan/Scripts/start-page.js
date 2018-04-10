@@ -90,6 +90,10 @@ function openEvent(event) {
 
     let buyBtn = $(`<p class="p" id="buy-btn">BUY TICKETS</p>`);
     columnDescription.append(buyBtn);
+    buyBtn.on("click", ()=>{
+
+        buyTickets(event.eventId);
+    });
     showViews(["#second1", "#events"]);
     $("#events-drop-menu").css({"display":"none"});
 }
@@ -120,6 +124,56 @@ function event_error() {
     alert("error")
 }
 
+function buyTickets(id) {
+
+    $.ajax({
+        headers: {Accept: "application/json", "Content-Type": "application/json"},
+        type: "GET",
+        dataType: "json",
+        url: (BASE_URL + "/event/hall?eventId=" + id),
+        success: buy_success,
+        error: buy_error
+    })
+    ;
+}
+function buy_success(data) {
+    console.log(data);
+    holle(data)
+
+}
+
+function buy_error() {
+    alert("error")
+}
+function holle(rowHole) {
+    $('#second2').empty();
+    $('#second2').append($("<div id='mest'></div>"))
+    for (let i=0;i<rowHole.hallScheme.seats.length;i++){
+
+        $('#mest').append($("<div class='mesta'  style='border: 2px solid black;width: 30px;height: 30px;display: inline-block;cursor: pointer' > </div>").text(i+1).data('price',rowHole.hallScheme.seats[i].price).data('row',rowHole.hallScheme.seats[i].row).data('place',rowHole.hallScheme.seats[i].place));
+
+    }
+
+    $('#second2').append($("<div id='priceTicket'></div>"))
+
+
+
+
+    $('.mesta').on("click", function () {
+        $(this).toggleClass("zanato")
+        console.log($(this).data())
+        if(this.className==="mesta"){
+            $("#priceTicket").remove(this)
+        }else {
+            $("#priceTicket").append($(this).data("price"))
+        }
+
+
+
+    })
+
+    showViews(["#second2", "#events"]);
+}
 
 
 

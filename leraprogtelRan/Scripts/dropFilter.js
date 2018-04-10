@@ -26,7 +26,7 @@ $("#drop-select").on("click", function () {
             console.log(this);
             $('#drop-select').text(this.textContent);
             $('#drop-select-option').css({'display': "none"});
-            
+
             $.ajax({
                 headers: {Accept: "application/json", "Content-Type": "application/json"},
                 type: "GET",

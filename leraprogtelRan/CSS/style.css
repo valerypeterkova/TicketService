@@ -64,6 +64,10 @@ body{
     height: 100vh;
 }
 
+.zanato{
+    background: black;
+}
+
 #background-image{
     position: absolute;
     right: 0;
@@ -852,7 +856,7 @@ input, button{
     }
 
     #events-p{
-        ;
+
     }
 
     #event1, #event2, #event3, #event4{
