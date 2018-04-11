@@ -7,6 +7,7 @@ var arr = ["#menu",
     "#drop-select-option",
     "#second1",
     "#second",
+    "#second2",
     "#events",
     "#registration",
     "#registration1", ".blur", "#search"];
@@ -49,6 +50,7 @@ $("#menu-icon-btn").on("click",function () {
 
 $("#logo1").on("click",function () {
     $("#second").empty();
+    $("#second2").empty();
     loadEvents(events);
     showViews(["#second", "#events"]);
     $("#events-drop-menu").css({"display":"block"});

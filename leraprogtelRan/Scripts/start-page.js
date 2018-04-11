@@ -1,6 +1,5 @@
 var BASE_URL = "https://ticketservice2018.herokuapp.com";
-
-
+var events;
 $(document).ready(function () {
     $.ajax({
         headers: {Accept: "application/json", "Content-Type": "application/json"},
@@ -49,6 +48,10 @@ function loadEvents(events) {
         })
     }
 }
+
+
+
+
 
 function openEvent(event) {
     $('#second1').empty();
@@ -123,7 +126,6 @@ function ev_error() {
 function event_error() {
     alert("error")
 }
-
 function buyTickets(id) {
 
     $.ajax({

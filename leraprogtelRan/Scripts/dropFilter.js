@@ -39,6 +39,7 @@ $("#drop-select").on("click", function () {
                 loadEvents(datas.events)
 
             });
+            $("#drop-select-option li").unbind();
         });
 
 });
