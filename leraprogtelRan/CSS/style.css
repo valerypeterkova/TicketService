@@ -54,6 +54,7 @@ body{
     font-size: 1.4vw;
     color: #95989a;
 }
+
 #back{
     background-image: url(../Images/decorGrey@2x.png);
     background-size: 40%;
@@ -64,10 +65,67 @@ body{
     height: 100vh;
 }
 
-.zanato{
-    background: black;
+.zanatoMesto{
+    background: red !important;
+    pointer-events: none;
 }
 
+.zanato{
+    background-color: #74fbd6 !important;
+    pointer-events: none;
+}
+
+#mest{
+    padding: 0;
+    width: 500px;
+    float: left;
+}
+.mesta{
+    border: 1px solid #07ace8;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    cursor: pointer
+}
+
+.delete{
+    padding-left: 10px;
+    cursor: pointer;
+    float: right;
+}
+
+#priceTicket{
+    font-family: FuturaFuturisC;
+    font-size: 1.5vw;
+    background-color: transparent;
+    max-width: 94%;
+    width: 28%;
+    display: inline-block;
+    color: #868685;
+    padding: 0;
+    margin-top: 8vw;
+}
+
+.mestoZanato{
+    border-bottom: #868685 solid 1px;
+}
+
+#ticket-info{
+    position: absolute;
+    margin: 2vw 0;
+}
+
+#title{
+    background-color: #07ace8;
+    color: white;
+    font-family: FuturaFuturisC-Bold;
+    font-size: 1.5vw;
+    text-align: center;
+    width: 50%;
+    height: 2.5vw;
+    margin: 2vw auto;
+    text-transform: uppercase;
+}
 #background-image{
     position: absolute;
     right: 0;
@@ -90,10 +148,15 @@ body{
     background-size: cover;
 }
 
+#footer-logo-col{
+    background: url("../Images/logo/gradient@2x.png");
+    background-size: cover;
+}
+
 #logo1{
     max-width: 50vw;
-    max-height: 6.4vw;
-    padding: 1.2vw 2vw 0 12vw  ;
+    max-height: 6.5vw;
+    padding: 0 2vw 0 8vw  ;
 }
 
 #text-btn{
@@ -142,6 +205,21 @@ body{
     -webkit-transition-delay: 9999s;
 }
 
+#search-input::-webkit-input-placeholder:focus{
+    color: transparent;
+}
+
+#search-input{
+    border: 1px solid #868685;
+    border-radius: 15px;
+    height: 2.5vw;
+    width: 20vw;
+}
+
+#search-img{
+    height: 2vw;
+    margin-top: 1vw;
+}
 
 #menu-icon{
     max-width: 1.8vw;
@@ -194,6 +272,7 @@ body{
     line-height: 1.7vw;
     font-size: 1.3vw;
     text-align: center;
+    margin-bottom: 2vw;
 }
 
 #upcoming-events{
@@ -202,15 +281,14 @@ body{
     color: #868685;
 }
 
-#up-ev{
+.up-ev{
     width: 100% ;
     height: auto;
 }
 
-#up-ev img{
+.up-ev1 img{
     display: block;
     width: 85%;
-    margin-top: 2vw;
 }
 
 #events-p-text{
@@ -312,6 +390,7 @@ body{
     bottom: 3vw;
     left: 0.5vw;
 }
+
 .holdTitle{
     display: block;
     width: 95%;
@@ -322,20 +401,51 @@ body{
     position: absolute;
     bottom: 1vw;
     left: 0.5vw;
-
 }
+
 .dataTime{
     position: absolute;
     top: 1.5vw;
     right: 2vw;
     font-size: 1vw;
 }
+
+.holdArtist1{
+    display: block;
+    width: 15vw;
+    margin: 0 auto;
+    color: #ffc800;
+    font-family: DINPro;
+    font-size: 2vw;
+    position: relative;
+    top: 12vw;
+}
+
+.dataTime1{
+    position: relative;
+    font-size: 1vw;
+    top: 12vw;
+    background-color: #f3f3f3;
+}
+
+.holdImg{
+    width: 85%;
+}
+
 .eventsImage{
     margin-right: 1vw !important;
     display: inline-block;
     width: 29vw !important;
     cursor: pointer;
+}
 
+.eventsImage1{
+    /*margin-right: 1vw !important;*/
+    display: inline-block;
+    /*width: 29vw !important;*/
+    cursor: pointer;
+    height: 12vw;
+    margin-top: -3vw;
 }
 
 #events11, #events22{
@@ -348,6 +458,13 @@ body{
     display: none;
     color: #95989a;
     margin-bottom: 3vw;
+}
+
+#second2{
+    /*width: 30vw;*/
+    /*margin-left: 3vw;*/
+    font-size: 0.8vw;
+    margin-bottom: 10vw
 }
 
 #description-txt{
@@ -377,12 +494,11 @@ body{
     display: none;
 }
 
- #registration{
-     margin-bottom: 20vw;
+#registration{
+    margin-bottom: 20vw;
+}
 
- }
-
-#reg-p-text, #reg-p-text1, #terms-and-cond{
+#reg-p-text, #reg-p-text1, #terms-and-cond, #tickets-p{
     max-width: 100%;
     text-align: center;
     margin-bottom: 4vw;
@@ -398,6 +514,7 @@ body{
     padding: 0;
     max-width: 50%;
 }
+
 #email-input-log, #password-input-log{
     border-bottom: 0.1vw solid #868685;
     display: inline-block;
@@ -431,21 +548,32 @@ input, button{
     height: 2.5vw;
 }
 
-#log-btn-input{
-    margin: 1vw 0;
+#addKorzina{
+    background-color: #696a6d;
+    color: white;
+    font-family: FuturaFuturisC-Bold;
+    font-size: 1.5vw;
+    text-align: center;
+    width: 100%;
+    height: 2.5vw;
+    /*float: right;*/
+    position: absolute;
+    bottom: -8vw;
+    cursor: pointer;
 }
 
 #new-reg-p{
     margin-bottom: 1vw;
 }
 
-#new-reg-btn1, #new-reg-btn2{
+#new-reg-btn1, #new-reg-btn2,#log-btn-input{
     margin: 1vw 0;
 }
 
 .container-fluid-p span{
     cursor: pointer;
 }
+
 #forgot-link, .container-fluid-p span{
     text-decoration: none;
     color: #ffc800 ;
@@ -487,10 +615,6 @@ input, button{
     display: inline-block;
     color: #868685;
 }
-
-/*#reg-page .container-fluid input{*/
-    /*width: 100%;*/
-/*}*/
 
 #reg-page .container-fluid{
     border-bottom: 0.1vw solid #95989a;
@@ -622,7 +746,8 @@ input, button{
 }
 
 #logo-footer{
-    height: 5vw;
+    padding-left: 3vw;
+    height: 4.5vw;
     width: auto;
 }
 
@@ -660,6 +785,7 @@ input, button{
     margin: 0;
     padding: 0;
     border: 0;
+    height: 4.5vw;
 }
 
 .input-confirm{
@@ -692,6 +818,7 @@ input, button{
     margin-top: 2em;
     padding: 0.1em;
 }
+
 .blur{
     position: absolute;
     width: 100%;
@@ -775,7 +902,6 @@ input, button{
     cursor: pointer;
     color: #fefefe;
 }
-
 
 @media screen and (max-width: 769px) {
     #img-logo, .row{
@@ -933,6 +1059,7 @@ input, button{
     #adress-footer2, #adress-footer{
         font-size: 3vw;
         text-align: center;
+
     }
 
     #hr-footer img{

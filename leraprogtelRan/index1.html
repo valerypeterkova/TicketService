@@ -30,18 +30,18 @@
 <div id="back"></div>
 <div class="row" id="head">
     <div class=" col-sm-4 " id="img-logo">
-        <img src="Images/logo/logoWhite.png" id="logo1" style="cursor: pointer">
+        <img src="Images/Asset%201.png" id="logo1" style="cursor: pointer">
     </div>
 
     <div class="col-sm-5 " id="text-btn">
-        <div><h1>Berlin City Hall | Events and Tickets</h1></div>
+        <div><h1>Events and Tickets</h1></div>
         <div class="clearfix"></div>
         <div id="log-container"><a href="#" id="log-btn"><p id="log-btn-p">LOGIN</p></a></div>
     </div>
     <div class=" col-sm-3 " id="icons">
         <form id="search-form">
             <p><input id="search-input" type="search" name="q" placeholder="Search">
-               <img id="search-img" src="Images/search-tool.png" style="cursor: pointer"></p>
+               <img id="search-img" src="Images/search-tool.svg" style="cursor: pointer"></p>
         </form>
 
         <!--<ul id="hr">-->
@@ -86,9 +86,10 @@
 
                     #calendar2 tbody td {
                         color: #868685;
+                        cursor: pointer;
                     }
 
-                    #calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
+                    #calendar2 tbody td:nth-child(n+6){
                         color: rgb(108, 108, 107);
                     }
 
@@ -102,9 +103,9 @@
                     <thead>
                     <tr>
                         <td>‹
-                        <td colspan="5">
+                        <td colspan="5" id="thisMonthAndYear">
                         <td>›
-                    <tr>
+                    <tr style="border-bottom: solid #868685 1px">
                         <td>M
                         <td>T
                         <td>W
@@ -112,10 +113,11 @@
                         <td>F
                         <td>S
                         <td>S
-                    <tbody>
+                    <tbody class="contentDate">
                 </table>
 
-                <script>
+                    <script>
+
                     function Calendar2(id, year, month) {
                         var Dlast = new Date(year, month + 1, 0).getDate(),
                             D = new Date(year, month, Dlast),
@@ -152,25 +154,46 @@
                     // переключатель минус месяц
                     document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function () {
                         Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) - 1);
-                    }
+
+                        // var datval=$("#thisMonthAndYear");
+                        // console.log(datval.data("year")+"."+(datval.data("month")+1)+".")
+                        // $('.contentDate tr td').on('click', function () {
+                        //     console.log(datval.data("year")+"."+(datval.data("month")+1)+"."+this.textContent)
+                        //     const second = Date.parse(datval.data("year")+"."+datval.data("month")+"."+this.textContent)/1000;   /*             $.ajax({
+                        //         headers: {Accept: "application/json", "Content-Type": "application/json"},
+                        //         type: "GET",
+                        //         dataType: "json",
+                        //         url: (BASE_URL + "/events/on/date" + "?date=" + second),
+                        //         success: cal_success,
+                        //         error: cal_error
+                        //     })
+                        //     ;
+                        //     function cal_success(data) {
+                        //         console.log(data);
+                        //
+                        //     }
+                        //
+                        //     function cal_error() {
+                        //         alert("error")
+                        //     }*/
+                        // });
+                    };
+
+
+
                     // переключатель плюс месяц
                     document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function () {
                         Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) + 1);
+
+
+
                     }
+
                 </script>
                 <!-- Календарь вверху -->
             </div>
-            <div class="container" id="up-ev">
-                <p id="upcoming-events">Upcoming events</p>
-                <!--<div class="container">-->
-                <img src="Images/div/evev1.jpg">
-                <!--</div>-->
-                <!--<div class="container">-->
-                <img src="Images/div/evev2.jpg">
-                <!--</div>-->
-                <!--<div class="container">-->
-                <img src="Images/div/evev3.jpg">
-                <!--</div>-->
+            <p id="upcoming-events">Upcoming events</p>
+            <div class="container" id="up-ev1">
             </div>
         </div>
         <div class="col-sm-9 " id="events-footer">
@@ -179,6 +202,11 @@
                     <div class=" col-sm-9" id="events-p-text">
                         <p class="caption-txt">EVENTS</p>
                     </div>
+                    <div id="tickets-p" style="display: none">
+                        <p class="caption-txt">TICKETS</p>
+                        <p class="p" id="ticket-info"></p>
+                    </div>
+
                     <div class="col-sm-3 " id="events-drop-menu">
                         <div style="display: inline-block; float: right; margin-right: 10vw">
                             <img src="Images/down-arrow.svg" id="drop-arrow">
@@ -189,55 +217,21 @@
                         </div>
                     </div>
                 </div>
+                <!--<div class="" id="first1" style="margin-bottom: 1vw">-->
+
+                        <div class="clearfix"></div>
+
+
+                <!--</div>-->
                 <div class="clearfix"></div>
                 <!--//coderjimoe-->
                 <div class="row container-fluid" id="search"></div>
-                <div class="row container-fluid" id="second">
-                    <!--<div class=" col-sm-6 " id="events11">-->
-                    <!--<div class="container-fluid" id="event1">-->
-                    <!--<img src="Images/div/ev1.jpg" class="img-ev" id="img-ev1" style="cursor: pointer">-->
-                    <!--</div>-->
-                    <!--<div class="container-fluid" id="event3">-->
-                    <!--<img src="Images/div/ev3.jpg" class="img-ev" style="cursor: pointer">-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-6 " id="events22">-->
-                    <!--<div class="container-fluid" id="event2">-->
-                    <!--<img src="Images/div/ev2.jpg" class="img-ev" style="cursor: pointer">-->
-                    <!--</div>-->
-                    <!--<div class="container-fluid" id="event4">-->
-                    <!--<img src="Images/div/ev4.jpg" class="img-ev" style="cursor: pointer">-->
-                    <!--</div>-->
-                    <!--</div>-->
-                </div>
-                <div class="row container-fluid" id="second1">
-                    <!--<div class="col-sm-6 " id="event-user-photo">-->
-                    <!--<div class="container" style="margin: 0; padding: 0">-->
-                    <!--<img src="Images/div/event1.jpg" style="height: 34vw">-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-sm-6 " id="event-user-description">-->
-                    <!--<h3 id="event-user-h3">Lady Gaga</h3>-->
-                    <!--<p id="description-txt">-->
-                    <!--Since her breakthrough with 'The Fame', the legendary Lady Gaga-->
-                    <!--has made it to the top of the charts and into the hearts-->
-                    <!--of millions of fans in no time. Also through her extravagant-->
-                    <!--clothing style and ingenious shows, the talented 'bird of paradise pop music'-->
-                    <!--draws attention again and is today the first and most successful musician in-->
-                    <!--the world with four number 1 albums in a row. Absolutely-->
-                    <!--live experience!-->
-                    <!--</p>-->
-                    <!--<p class="p">Date: </p>-->
-                    <!--<p class="p">Tickets avaliable - </p>-->
-                    <!--<p class="p">Price range: </p>-->
-                    <!--<br>-->
-                    <!--<p class="p" id="buy-btn">BUY TICKETS</p>-->
-                    <!--</div>-->
-                </div>
-                <div class="row container-fluid" id="second2">
-                </div>
+                <div class="row container-fluid" id="second"></div>
+                <div class="row container-fluid" id="second1"></div>
+                <div class="row container-fluid" id="second2"></div>
+                <div class="row container-fluid" id="calendar-filter"></div>
             </div>
-
+            <div class="row container-fluid" id="second3"></div>
             <div class="container" id="registration">
                 <div class="container" id="reg-p-text">
                     <p class="caption-txt">REGISTRATION</p>
@@ -373,32 +367,23 @@
             </div>
 
             <div id="root"></div>
-            <!--<div class="container" id="tickets">-->
-                <!--<p class="caption-txt">TICKETS</p>-->
-                <!--<p class="p"></p>-->
-                <!--<div class="clearfix"></div>-->
-                <!--<div class="row container-fluid">-->
-                    <!--<div class="col-sm-8"></div>-->
-                    <!--<div class="col-sm-4"></div>-->
-                <!--</div>-->
-            <!--</div>-->
 
             <div class="clearfix"></div>
             <div class="row container-fluid" id="footer">
                 <div class="col-sm-3 " id="footer-logo-col">
-                    <img src="Images/logoColoured.png" id="logo-footer">
+                    <img src="Images/Asset%201.png" id="logo-footer">
                 </div>
-                <div class="col-sm-6 " id="footer-p-col">
+                <div class="col-sm-6 " id="footer-p-col" style="padding-left: 2vw">
                     <p id="adress-footer">
-                        <br>Berlin City Hall
+                        Tickets and Events
                         <br>Freudstrasse 69, 10117 Berlin
-                        <br>Tel.: 0302223344
+                        <br>Plaut street 10, 76706 Rehovot Israel
                     </p>
                 </div>
                 <div class=" col-sm-3 " id="footer-icons-col">
                     <p id="adress-footer2">
-                        <br>Fax: 0302223355
-                        <br>E-Mail: info@bsh.de
+                        Fax: 08-9478787
+                        <br>E-Mail: tel-ran@tel-ran.co.il
                     </p>
                     <ul id="hr-footer">
                         <li><a href="#"><img src="Images/icons/youtube-logo.svg"></a></li>
@@ -415,10 +400,10 @@
 </div>
 <div class="row container-fluid" id="menu">
     <div class=" col-sm-3  " id="img-logo-menu">
-        <img src="Images/logo/logoWhite.png" id="logo-menu">
+        <img src="Images/Asset%201.png" id="logo-menu">
     </div>
     <div class=" col-sm-6 " id="text-icons-menu">
-        <h2>Berlin City Hall | Events and Tickets</h2>
+        <h2>Events and Tickets</h2>
         <ul id="hr-menu">
             <li><a href="#"><img src="Images/menu-icons/youtube-logomenu.svg"></a></li>
             <li><a href="#"><img src="Images/menu-icons/facebook-logomenu.svg"></a></li>
@@ -428,11 +413,11 @@
             <li><a href="#"><img src="Images/menu-icons/wi-fi-logomenu.svg"></a></li>
         </ul>
         <p id="adress-menu">
-            <br>Berlin City Hall
-            <br>Freudstrasse 69, 10117 Berlin
-            <br>Tel.: 0302223344
-            <br>Fax: 0302223355
-            <br>E-Mail: info@bsh.de
+            <br>Tickets and Events
+            <br>Plaut street 10, 76706 Rehovot Israel
+            <br>Tel.: 08-9479977 , 054-5699350
+            <br>Fax: 08-9478787
+            <br>E-Mail: tel-ran@tel-ran.co.il
         </p>
     </div>
     <div class=" col-sm-2 " id="right-col">

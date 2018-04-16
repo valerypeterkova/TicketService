@@ -12,7 +12,7 @@ function types_success(data) {
         $("#drop-select-option").append(elem)
 
     }
-    $('#drop-select').append(data[0]);
+    $('#drop-select').text("EVENT TYPE");
 }
 
 $("#drop-select").on("click", function () {
@@ -41,6 +41,7 @@ $("#drop-select").on("click", function () {
             });
             $("#drop-select-option li").unbind();
         });
+    $("#drop-select-option").unbind();
 
 });
 

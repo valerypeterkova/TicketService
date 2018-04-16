@@ -8,9 +8,14 @@ var arr = ["#menu",
     "#second1",
     "#second",
     "#second2",
+    "#tickets-p",
     "#events",
     "#registration",
-    "#registration1", ".blur", "#search"];
+    "#registration1",
+    // "#events-p-text",
+    ".blur",
+    "#search",
+"#second3"];
 
 function showView(elem) {
     for(i = 0; i < arr.length; i++){
@@ -41,18 +46,13 @@ $("#menu-icon-btn").on("click",function () {
     $("#menu").css({"display":"block"});
 });
 
-
-
-
-// $(".img-ev").on("click",function () {
-//     showViews(["#second1", "#events"]);
-// });
-
 $("#logo1").on("click",function () {
     $("#second").empty();
     $("#second2").empty();
+    showView("#second3");
     loadEvents(events);
     showViews(["#second", "#events"]);
+    $("#events-p-text").css('display', 'block');
     $("#events-drop-menu").css({"display":"block"});
     $(".blur").css('display', 'none');
     hideBlurMain();
@@ -88,6 +88,7 @@ $("#events-btn-menu").on("click", function () {
     $("#second").empty();
     loadEvents(events);
     showViews(["#events", "#second"]);
+    $("#events-p-text").css('display', 'block');
     menuClose();
     $(".blur").css('display', 'none');
     hideBlurMain();
@@ -116,3 +117,8 @@ $('button.show-password1').click(function() {
     pass1.attr('type', pass1.attr('type') === 'password' ? 'text' : 'password');
 });
 
+// $("#buy-btn").on("click",function () {
+//     $("events-p-text").css('display', 'none');
+//     $("events-drop-menu").css('display', 'none');
+//     showViews(["#tickets-p", "#second2"]);
+// });
