@@ -3,19 +3,27 @@ var events;
 var userMail;
 
 var arr = ["#menu",
+    "#about",
+    "#about_us",
+    "#map",
+    "#data-search",
     "#root",
+    "#root1",
     "#drop-select-option",
     "#second1",
     "#second",
     "#second2",
     "#tickets-p",
+    "#cart-p",
     "#events",
     "#registration",
     "#registration1",
+    "#success",
     // "#events-p-text",
     ".blur",
+    ".blur1",
     "#search",
-"#second3"];
+    "#second3"];
 
 function showView(elem) {
     for(i = 0; i < arr.length; i++){
@@ -98,12 +106,24 @@ $("#new-reg-btn1").on("click",function () {
     showView("#registration1");
 });
 
-$("#data-prot").on("click",function () {
+$(".data-prot").on("click",function () {
     showView("#root");
 });
 
-$("#stand-terms").on("click",function () {
+$(".data-prot1").on("click",function () {
+    showView("#root1");
+});
+$(".stand-terms").on("click",function () {
     showView("#root");
+});
+
+
+$("#delete-section").on("click",function () {
+    $("#second3").empty();
+    $("#addKorz1").empty();
+    $("#addKorz2").empty();
+    // loadEvents(events);
+    // showViews(["#second", "#events"]);
 });
 
 var pass = $('#input-reg12');
@@ -122,3 +142,42 @@ $('button.show-password1').click(function() {
 //     $("events-drop-menu").css('display', 'none');
 //     showViews(["#tickets-p", "#second2"]);
 // });
+
+$("#shoppingcart-btn-menu").on("click", function () {
+    $("#second").empty();
+    $("#events-p-text").css('display', 'none');
+    $("#events-drop-menu").css({"display":"none"});
+    showViews(["#events", "#cart-p", "#second3"]);
+    menuClose();
+    $(".blur").css('display', 'none');
+    hideBlurMain();
+});
+
+$('#proceed1').on('click', function () {
+    $(".blur1").css('display', 'none');
+    hideBlurMain();
+    showViews(["#success", "#events"]);
+    menuClose();
+
+});
+
+$("#congrats1").on("click",function () {
+    $("#second").empty();
+    $("#second2").empty();
+    showView("#second3");
+    loadEvents(events);
+    showViews(["#second", "#events"]);
+    $("#events-p-text").css('display', 'block');
+    $("#events-drop-menu").css({"display":"block"});
+
+});
+
+$("#aboutus-btn-menu").on("click",function () {
+    $(".blur1").css('display', 'none');
+    hideBlurMain();
+    showViews(["#about", "#about_us", "#events", "#map"]);
+    $("#events-p-text").css('display', 'none');
+    $("#events-drop-menu").css({"display":"none"});
+    menuClose();
+
+});

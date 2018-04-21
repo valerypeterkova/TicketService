@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: DINPro;
     src: url(fonts/DINPro.otf);
@@ -49,13 +48,13 @@
     src: url(fonts/FuturaFuturisLightC[1].otf);
 }
 
-body{
-    font-family:  Arial;
+body {
+    font-family: Arial;
     font-size: 1.4vw;
     color: #95989a;
 }
 
-#back{
+#back {
     background-image: url(../Images/decorGrey@2x.png);
     background-size: 40%;
     background-position: right -2vw bottom -3vw;
@@ -65,22 +64,38 @@ body{
     height: 100vh;
 }
 
-.zanatoMesto{
-    background: red !important;
+#map {
+    width: 80%;
+    margin: 5vw auto;
+    height: 300px;
+    background-color: grey;
+}
+
+#alert-txt {
+    font-family: FuturaFuturisC;
+    font-size: 1.1vw;
+    color: red;
+    margin-top: 2vw;
+    text-align: left;
+}
+
+.zanatoMesto {
+    background: #95989a !important;
     pointer-events: none;
 }
 
-.zanato{
+.zanato {
     background-color: #74fbd6 !important;
     pointer-events: none;
 }
 
-#mest{
+#mest {
     padding: 0;
     width: 500px;
     float: left;
 }
-.mesta{
+
+.mesta {
     border: 1px solid #07ace8;
     width: 30px;
     height: 30px;
@@ -88,13 +103,12 @@ body{
     cursor: pointer
 }
 
-.delete{
-    padding-left: 10px;
+.delete {
     cursor: pointer;
     float: right;
 }
 
-#priceTicket{
+#priceTicket {
     font-family: FuturaFuturisC;
     font-size: 1.5vw;
     background-color: transparent;
@@ -103,19 +117,29 @@ body{
     display: inline-block;
     color: #868685;
     padding: 0;
-    margin-top: 8vw;
+    margin: 7vw 0 0 3vw;
 }
 
-.mestoZanato{
+.mestoZanato {
     border-bottom: #868685 solid 1px;
 }
 
-#ticket-info{
+#ticket-info {
     position: absolute;
     margin: 2vw 0;
 }
 
-#title{
+#sshopping-cart-info {
+    font-family: FuturaFuturisC-Bold;
+    font-size: 1.7vw;
+    color: #95989a;
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    width: 50vw;
+}
+
+#title {
     background-color: #07ace8;
     color: white;
     font-family: FuturaFuturisC-Bold;
@@ -126,19 +150,20 @@ body{
     margin: 2vw auto;
     text-transform: uppercase;
 }
-#background-image{
+
+#background-image {
     position: absolute;
     right: 0;
     bottom: 0;
 }
 
-#head{
+#head {
     margin-right: 1.5vw;
     margin-left: 0;
     padding: 0;
 }
 
-#img-logo{
+#img-logo {
     height: 6.5vw;
     max-width: 28vw;
     border: 0;
@@ -148,47 +173,47 @@ body{
     background-size: cover;
 }
 
-#footer-logo-col{
+#footer-logo-col {
     background: url("../Images/logo/gradient@2x.png");
     background-size: cover;
 }
 
-#logo1{
+#logo1 {
     max-width: 50vw;
     max-height: 6.5vw;
-    padding: 0 2vw 0 8vw  ;
+    padding: 0 2vw 0 8vw;
 }
 
-#text-btn{
+#text-btn {
     height: 6.5vw;
     border: 0;
-    font-family:DINPro;
+    font-family: DINPro;
     font-size: 1.5vw;
     color: #868685;
     padding-bottom: 0;
     margin-bottom: 0;
 }
 
-#text-btn h1{
-   margin-top: 1vw;
+#text-btn h1 {
+    margin-top: 1vw;
 }
 
-#log-container{
+#log-container {
     position: absolute;
     bottom: 0;
 }
 
-#log-btn{
+#log-btn {
     display: inline-block;
     border-bottom: 0.5vw solid #868685;
     height: auto;
-    font-family:dinpro-medium;
+    font-family: dinpro-medium;
     font-size: 1.4vw;
     color: #868685;
     text-decoration: none;
 }
 
-#icons{
+#icons {
     padding: 0;
     height: 6.5vw;
     border: 0;
@@ -199,66 +224,66 @@ body{
 #search-input:-webkit-autofill,
 #search-input:-webkit-autofill:hover,
 #search-input:-webkit-autofill:focus,
-#search-input:-webkit-autofill:active{
-    -webkit-transition: color 9999s ease-out ;
+#search-input:-webkit-autofill:active {
+    -webkit-transition: color 9999s ease-out;
     -webkit-transition: background-color 9999s ease-out;
     -webkit-transition-delay: 9999s;
 }
 
-#search-input::-webkit-input-placeholder:focus{
+#search-input::-webkit-input-placeholder:focus {
     color: transparent;
 }
 
-#search-input{
-    border: 1px solid #868685;
-    border-radius: 15px;
+#search-input {
+    border-bottom: 1px solid #868685;
+    /*border-radius: 10px;*/
     height: 2.5vw;
     width: 20vw;
 }
 
-#search-img{
+#search-img {
     height: 2vw;
     margin-top: 1vw;
 }
 
-#menu-icon{
+#menu-icon {
     max-width: 1.8vw;
 }
 
-#menu-icon-btn{
+#menu-icon-btn {
     position: absolute;
     bottom: 0;
     right: 0;
 }
 
 /*#hr{*/
-    /*height: auto;*/
-    /*display: inline-flex;*/
-    /*justify-content: end;*/
-    /*list-style: none;*/
+/*height: auto;*/
+/*display: inline-flex;*/
+/*justify-content: end;*/
+/*list-style: none;*/
 /*}*/
 
 /*#icons li img{*/
-    /*max-width: 1.8vw;*/
-    /*float: right;*/
-    /*padding: 0;*/
-    /*margin: 0.3vw;*/
+/*max-width: 1.8vw;*/
+/*float: right;*/
+/*padding: 0;*/
+/*margin: 0.3vw;*/
 /*}*/
 
-#main{
-    background: rgba(134,134,133,0.1);
+#main {
+    background: rgba(134, 134, 133, 0.1);
     margin: 0 auto;
     width: 88%;
     height: 100%;
 }
 
-#calendar-upcoming{
+#calendar-upcoming {
     border: 0;
     margin: 3vw 0 0 0;
     padding: 1vw 0 1vw 1vw;
 }
 
-#calendar{
+#calendar {
     font-family: FuturaFuturisC;
     font-size: 1.5vw;
     color: #868685;
@@ -266,7 +291,7 @@ body{
     padding: 0 0 1vw 1vw;
 }
 
-#calendar2{
+#calendar2 {
     font-family: FuturaFuturisLightC;
     width: 85%;
     line-height: 1.7vw;
@@ -275,36 +300,36 @@ body{
     margin-bottom: 2vw;
 }
 
-#upcoming-events{
+#upcoming-events {
     font-family: FuturaFuturisC;
     font-size: 1.5vw;
     color: #868685;
 }
 
-.up-ev{
-    width: 100% ;
+.up-ev {
+    width: 100%;
     height: auto;
 }
 
-.up-ev1 img{
+.up-ev1 img {
     display: block;
     width: 85%;
 }
 
-#events-p-text{
+#events-p-text {
     padding: 0;
     margin: 0 auto;
     text-align: center
 }
 
-#events-p-text p{
+#events-p-text p {
     margin-left: 12vw;
 }
 
-.caption-txt{
+.caption-txt {
     font-family: FuturaFuturisC-Bold;
     font-size: 2.5vw;
-    color:#696a6d ;
+    color: #696a6d;
     text-decoration: none;
     display: inline-block;
     border-bottom: 0.7vw solid #696a6d;
@@ -313,27 +338,27 @@ body{
     text-align: center;
 }
 
-#events-drop-menu{
+#events-drop-menu {
     display: inline-block;
     padding: 0;
     width: 25%;
 }
 
-#drop-arrow{
+#drop-arrow {
     width: 1vw;
     height: 1vw;
     display: inline-block;
 }
 
-#menuUl{
+#menuUl {
     position: absolute;
     z-index: 10;
-    top:0;
+    top: 0;
     display: inline-block;
     margin-left: 1.5vw;
 }
 
-#drop-select{
+#drop-select {
     border: none;
     background: transparent;
     font-family: FuturaFuturisLightC;
@@ -345,7 +370,7 @@ body{
     text-transform: uppercase;
 }
 
-#drop-select-option{
+#drop-select-option {
     background-color: rgba(243, 243, 243, 0.6);
     border: none;
     font-family: FuturaFuturisLightC;
@@ -359,26 +384,26 @@ body{
     text-transform: uppercase;
 }
 
-#drop-select-option li{
+#drop-select-option li {
     /* margin: 0.5em 0; */
     padding: 5px;
     background: linear-gradient(#f3f3f3, #dcdcd8);
 }
 
-#events-footer{
+#events-footer {
     margin-top: 2vw;
 }
 
-#events{
+#events {
     border: 0;
     max-width: 100%;
     height: auto;
     float: right;
     padding: 0;
-    margin-bottom: 2vw;
+    /*margin-bottom: 2vw;*/
 }
 
-.holdArtist{
+.holdArtist {
     display: block;
     border-bottom: 0.5vw solid #ffc800;
     width: 95%;
@@ -391,7 +416,7 @@ body{
     left: 0.5vw;
 }
 
-.holdTitle{
+.holdTitle {
     display: block;
     width: 95%;
     margin: 0 auto;
@@ -403,14 +428,14 @@ body{
     left: 0.5vw;
 }
 
-.dataTime{
+.dataTime {
     position: absolute;
     top: 1.5vw;
     right: 2vw;
     font-size: 1vw;
 }
 
-.holdArtist1{
+.holdArtist1 {
     display: block;
     width: 15vw;
     margin: 0 auto;
@@ -421,25 +446,25 @@ body{
     top: 12vw;
 }
 
-.dataTime1{
+.dataTime1 {
     position: relative;
     font-size: 1vw;
     top: 12vw;
     background-color: #f3f3f3;
 }
 
-.holdImg{
+.holdImg {
     width: 85%;
 }
 
-.eventsImage{
+.eventsImage {
     margin-right: 1vw !important;
     display: inline-block;
     width: 29vw !important;
     cursor: pointer;
 }
 
-.eventsImage1{
+.eventsImage1 {
     /*margin-right: 1vw !important;*/
     display: inline-block;
     /*width: 29vw !important;*/
@@ -448,26 +473,30 @@ body{
     margin-top: -3vw;
 }
 
-#events11, #events22{
+#events11, #events22 {
     padding: 0;
     margin: 0;
 }
 
-#second1{
+#second1 {
     font-family: FuturaFuturisC-Bold;
     display: none;
     color: #95989a;
     margin-bottom: 3vw;
 }
 
-#second2{
+#second, #second1 {
+    margin-top: 2vw;
+}
+
+#second2 {
     /*width: 30vw;*/
     /*margin-left: 3vw;*/
     font-size: 0.8vw;
     margin-bottom: 10vw
 }
 
-#description-txt{
+#description-txt {
     margin: 2vw 0 2vw 0;
     font-family: FuturaFuturisC;
     font-size: 1.1vw;
@@ -480,42 +509,42 @@ body{
 }
 
 .p1 {
-    color: #ffc800 ;
+    color: #ffc800;
 }
 
-#buy-btn{
+#buy-btn {
     cursor: pointer;
-    color: #ffc800 ;
+    color: #ffc800;
     margin-top: 1.5vw;
- }
+}
 
-#registration, #registration1{
+#registration, #registration1 {
     max-width: 100%;
     display: none;
 }
 
-#registration{
+#registration {
     margin-bottom: 20vw;
 }
 
-#reg-p-text, #reg-p-text1, #terms-and-cond, #tickets-p{
+#reg-p-text, #reg-p-text1, #terms-and-cond, #terms-and-cond12, #tickets-p, #cart-p {
     max-width: 100%;
     text-align: center;
     margin-bottom: 4vw;
     padding: 0;
 }
 
-#reg-page{
+#reg-page {
     margin-bottom: 3vw;
 }
 
-#form-cont{
-    margin: 2vw 0 0 0 ;
+#form-cont {
+    margin: 2vw 0 0 0;
     padding: 0;
     max-width: 50%;
 }
 
-#email-input-log, #password-input-log{
+#email-input-log, #password-input-log {
     border-bottom: 0.1vw solid #868685;
     display: inline-block;
     padding: 0;
@@ -523,12 +552,12 @@ body{
     margin-bottom: 1vw;
 }
 
-input, button{
+input, button {
     border: none;
     padding: 0;
 }
 
-#input-btn1, #input-btn2{
+#input-btn1, #input-btn2 {
     color: #868685;
     background-color: transparent;
     font-weight: bold;
@@ -538,7 +567,7 @@ input, button{
     max-width: 9%;
 }
 
-#log-btn-input, #new-reg-btn1, #new-reg-btn2, #reg-btn1{
+#log-btn-input, #new-reg-btn1, #new-reg-btn2, #reg-btn1 {
     background-color: #696a6d;
     color: white;
     font-family: FuturaFuturisC-Bold;
@@ -548,7 +577,7 @@ input, button{
     height: 2.5vw;
 }
 
-#addKorzina{
+#addKorzina {
     background-color: #696a6d;
     color: white;
     font-family: FuturaFuturisC-Bold;
@@ -558,29 +587,116 @@ input, button{
     height: 2.5vw;
     /*float: right;*/
     position: absolute;
-    bottom: -8vw;
+    bottom: -6vw;
     cursor: pointer;
 }
 
-#new-reg-p{
+.data-prot, .data-prot1 {
+    text-decoration: none;
+    color: #ffc800;
+    font-family: FuturaFuturisLightC;
+    cursor: pointer;
+}
+
+#mail {
+    background-color: transparent;
+    border: #868685 solid 1px;
+    margin-top: 5vw;
+}
+
+#addmail {
+    background-color: #696a6d;
+    color: white;
+    font-family: FuturaFuturisC-Bold;
+    font-size: 1.5vw;
+    text-align: center;
+    width: 80%;
+    height: 2.5vw;
+    /*float: right;*/
+    position: absolute;
+    bottom: 1vw;
+    cursor: pointer;
+}
+
+#btn-oplata {
+    background-color: #696a6d;
+    color: white;
+    font-family: FuturaFuturisC-Bold;
+    font-size: 1.5vw;
+    text-align: center;
+    width: 80%;
+    height: 2.5vw;
+    /*float: right;*/
+    position: absolute;
+    bottom: 1vw;
+    cursor: pointer;
+}
+
+#addKorz1 {
+    /*border: #868685 solid 1px;*/
+    /*border-right: none ;*/
+    padding: 0;
+    min-height: 30vw;
+}
+
+#addKorz2 {
+    /*border: #868685 solid 1px;*/
+    /*border-left: none ;*/
+    padding: 0;
+    min-height: 30vw;
+}
+
+#second3, #success, #about_us  {
+    display: none;
+    margin-top: -2vw;
+}
+
+#success{
+    height: 40vw;
+}
+
+#success .caption-txt, #about .caption-txt{
+    margin: 2vw 25vw;
+}
+
+#addKorz {
+    margin: 5vw -2vw;
+    width: 125%;
+}
+
+#addKorz11 {
+    margin: 0 4vw;
+}
+
+#summary {
+    position: absolute;
+    bottom: -3vw;
+    right: 0;
+}
+
+#cols {
+    margin: 0 4.6vw;
+}
+
+#new-reg-p {
     margin-bottom: 1vw;
 }
 
-#new-reg-btn1, #new-reg-btn2,#log-btn-input{
+#new-reg-btn1, #new-reg-btn2, #log-btn-input {
     margin: 1vw 0;
 }
 
-.container-fluid-p span{
+.container-fluid-p span {
     cursor: pointer;
 }
 
-#forgot-link, .container-fluid-p span{
+#forgot-link, .container-fluid-p span {
     text-decoration: none;
-    color: #ffc800 ;
+    color: #ffc800;
     font-family: FuturaFuturisLightC;
 }
 
-#email-txt, #pass-txt{
+#email-txt, #pass-txt {
     font-family: FuturaFuturisC;
     font-size: 1.5vw;
     background-color: transparent;
@@ -589,24 +705,24 @@ input, button{
     color: #868685;
 }
 
-#salutation-address, #contact-info, #reg-page{
+#salutation-address, #contact-info, #reg-page {
     padding: 0;
 }
 
-#form-cont1, #form-cont2{
+#form-cont1, #form-cont2 {
     margin: 0;
     padding: 0;
 }
 
-#form-cont1{
+#form-cont1 {
     max-width: 90%;
 }
 
-#form-cont2{
+#form-cont2 {
     max-width: 95%;
 }
 
-#registration1 select option, #registration1 select, #registration1 input{
+#registration1 select option, #registration1 select, #registration1 input {
     border: none;
     background-color: transparent;
     font-family: FuturaFuturisC;
@@ -616,44 +732,44 @@ input, button{
     color: #868685;
 }
 
-#reg-page .container-fluid{
+#reg-page .container-fluid {
     border-bottom: 0.1vw solid #95989a;
     padding: 0;
 }
 
-#contact-info p, #salutation-address p{
+#contact-info p, #salutation-address p {
     margin-bottom: 2vw;
 }
 
-.drop-arrow1{
-    width:10%;
+.drop-arrow1 {
+    width: 10%;
     height: 0.8vw;
     display: inline-block;
     float: right;
 }
 
-.the-name img,.the-name1 img{
+.the-name img, .the-name1 img {
     margin-top: 1vw;
     margin-right: -1vw;
 }
 
-.hold-name-input,.hold-name-input1{
+.hold-name-input, .hold-name-input1 {
     cursor: pointer;
 }
 
-.span-m,.span-m1 {
+.span-m, .span-m1 {
     width: 90%;
     font-family: FuturaFuturisC;
     font-size: 1.5vw;
     color: #868685;
 }
 
-.hold-options, .hold-options1{
+.hold-options, .hold-options1 {
     position: absolute;
     display: none;
 }
 
-.hold-options div,.hold-options1 div{
+.hold-options div, .hold-options1 div {
     background: linear-gradient(#f9f9f9, #e8e8e8);
     padding: 5px;
     font-family: FuturaFuturisC;
@@ -661,65 +777,65 @@ input, button{
     color: #868685;
 }
 
-.the-name, .the-name1{
+.the-name, .the-name1 {
     border-bottom: 0.1vw solid #95989a;
 }
 
-#input-reg11, #input-reg12{
+#input-reg11, #input-reg12 {
     width: 90%;
 }
 
-.show-password, .show-password1{
+.show-password, .show-password1 {
     float: right;
     background-color: transparent;
     display: inline-block;
     width: 10%;
 }
 
-.show-password img, .show-password1 img{
+.show-password img, .show-password1 img {
     float: right;
     margin-top: 0.5vw;
 }
 
-.error{
+.error {
     font-family: FuturaFuturisLightC;
     font-size: 0.9vw;
     color: red;
 }
 
-.container-fluid-btn{
+.container-fluid-btn {
     display: inline-block;
     margin-bottom: 1vw;
 }
 
-.container-fluid-btn p{
+.container-fluid-btn p {
     font-family: FuturaFuturisLightC;
     color: #868685;
     font-size: 1vw;
 }
 
-.container-fluid-btn input{
+.container-fluid-btn input {
     margin: 0.3vw 0.5vw 2vw 0;
     float: left;
 }
 
-#reg-btn1{
+#reg-btn1 {
     margin: 2vw 0;
     float: right;
     display: inline-block;
     max-width: 45%;
 }
 
-#root{
+#root, #root1 {
     display: none;
 }
 
-#p-txt-terms p{
+#p-txt-terms p, #p-txt-terms1 p {
     margin: 1.6vw;
     line-height: 1.6vw;
 }
 
-#return-btn{
+#return-btn, #return-btn1 {
     background-color: #696a6d;
     color: white;
     font-family: FuturaFuturisC-Bold;
@@ -731,41 +847,41 @@ input, button{
     margin: 10vw 2vw;
 }
 
-.container, .container-fluid{
+.container, .container-fluid {
     margin: 0;
     padding: 0;
     width: 100%;
 }
 
-#footer{
-    margin: 0;
+#footer {
+    margin: 2vw 0 1vw 0;
     border: 0;
     max-width: 100%;
     height: auto;
     padding: 0;
 }
 
-#logo-footer{
+#logo-footer {
     padding-left: 3vw;
     height: 4.5vw;
     width: auto;
 }
 
-#adress-footer, #adress-footer2{
-    font-family:FuturaFuturisLightC;
+#adress-footer, #adress-footer2 {
+    font-family: FuturaFuturisLightC;
     font-size: 1vw;
     color: #868685;
 }
 
-#adress-footer{
+#adress-footer {
     text-align: left;
 }
 
-#adress-footer2{
+#adress-footer2 {
     text-align: right;
 }
 
-#hr-footer{
+#hr-footer {
     float: right;
     height: auto;
     display: inline-flex;
@@ -781,14 +897,14 @@ input, button{
     margin: 0.2vw;
 }
 
-#footer-logo-col, #footer-icons-col, #footer-p-col{
+#footer-logo-col, #footer-icons-col, #footer-p-col {
     margin: 0;
     padding: 0;
     border: 0;
     height: 4.5vw;
 }
 
-.input-confirm{
+.input-confirm {
     /*max-width: 30%;*/
     max-width: 100%;
     width: 400px;
@@ -798,7 +914,43 @@ input, button{
     align-items: center;
 }
 
-#confir-code{
+.input-confirm1 {
+    max-width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#proceed, #proceed1 {
+    text-transform: uppercase;
+    color: #868685;
+    font-family: FuturaFuturisLightC;
+    font-size: 4vw;
+}
+
+#proceed1{
+    cursor: pointer;
+}
+
+#congrats{
+    font-family: DINPro;
+    font-size: 1.5vw;
+    color: #07ace8;
+    margin: 2vw;
+    text-align: left;
+}
+
+#congrats1{
+    cursor: pointer;
+    font-family: DINPro;
+    font-size: 1.5vw;
+    color: #868685;
+    margin: 2vw;
+    text-align: left;
+}
+
+#confir-code {
     border-bottom: #868685 solid 1px;
     font-family: FuturaFuturisLightC;
     color: #868685;
@@ -807,7 +959,7 @@ input, button{
     width: 100%;
 }
 
-#conf-code{
+#conf-code {
     background-color: #696a6d;
     color: white;
     font-family: FuturaFuturisC-Bold;
@@ -819,7 +971,7 @@ input, button{
     padding: 0.1em;
 }
 
-.blur{
+.blur, .blur1 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -828,67 +980,67 @@ input, button{
     z-index: 9998;
 }
 
-#menu{
+#menu {
     background: #696a6d;
     padding: 0;
     margin: 0;
     border: 0;
     position: absolute;
     width: 100%;
-    top:0;
-    display:none;
+    top: 0;
+    display: none;
     z-index: 10000;
 }
 
-#img-logo-menu{
+#img-logo-menu {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
-#logo-menu{
+#logo-menu {
     padding: 4vw 3vw 0 7vw;
 }
 
-#text-icons-menu h2{
+#text-icons-menu h2 {
     font-family: DINPro;
     font-size: 1.2vw;
     margin: 1.5vw 0;
 }
 
-#hr-menu{
+#hr-menu {
     height: auto;
     display: inline-flex;
     list-style: none;
 }
 
-#hr-menu li img{
+#hr-menu li img {
     max-width: 2.5vw;
     float: right;
     margin: 0.4vw;
 }
 
-#text-icons-menu{
+#text-icons-menu {
     color: #e5e5e5;
     max-width: 100%;
     height: auto;
     border: 0;
-    font-family:FuturaFuturisLightC;
+    font-family: FuturaFuturisLightC;
     font-size: 1.2vw;
     padding-left: 5vw;
 }
 
-#adress-menu{
+#adress-menu {
     padding-bottom: 3vw;
 }
 
-#menu-close{
+#menu-close {
     max-width: 1.4vw;
     height: auto;
     padding-top: 5vw;
 }
 
-#txt-menu{
+#txt-menu {
     max-width: 100%;
     height: auto;
     font-family: dinpro-medium;
@@ -897,197 +1049,198 @@ input, button{
     padding-top: 4vw;
 }
 
-#txt-menu li{
+#txt-menu li {
     padding-bottom: 0.5vw;
     cursor: pointer;
     color: #fefefe;
 }
 
 @media screen and (max-width: 769px) {
-    #img-logo, .row{
+    #img-logo, .row {
         max-width: 100% !important;
         margin: 0 !important;
         width: 100% !important;
     }
 
-    #img-logo{
+    #img-logo {
         height: 14vw !important;
     }
 
-    #logo1{
+    #logo1 {
         width: 30vw;
         max-height: 12vw !important;
         margin-left: 6vw;
         padding: 0;
     }
 
-    #text-btn, #icons{
+    #text-btn, #icons {
         width: 49% !important;
         display: inline-block;
         padding: 0;
         height: 18vw !important;
     }
 
-    #text-btn{
+    #text-btn {
         float: left;
     }
 
-    #icons{
+    #icons {
         padding-right: 3vw;
     }
 
-    #menu-icon{
+    #menu-icon {
         margin-right: 3vw;
     }
 
-    #text-btn h1, #log-btn{
+    #text-btn h1, #log-btn {
         font-size: 4vw;
         margin: 2vw 0 0 5vw;
     }
 
-    #menu-icon, #icons li img{
+    #menu-icon, #icons li img {
         max-width: 5vw !important;
         margin-left: 1.5vw;
     }
 
-    #calendar-upcoming{
+    #calendar-upcoming {
         float: left;
         width: 35%;
     }
 
-    #calendar, #upcoming-events{
+    #calendar, #upcoming-events {
         font-size: 2.5vw;
     }
-    #events-footer{
+
+    #events-footer {
         float: right;
         width: 65%;
         padding: 0;
     }
 
-    #menuUl{
-         margin-left: 4vw;
+    #menuUl {
+        margin-left: 4vw;
     }
 
-    #drop-arrow{
+    #drop-arrow {
         width: 4vw;
         height: auto;
     }
 
-    #drop-select, #drop-select-option{
+    #drop-select, #drop-select-option {
         font-size: 3vw;
     }
 
-    #events{
+    #events {
         width: 100% !important;
     }
 
-    #events-p{
+    #events-p {
 
     }
 
-    #event1, #event2, #event3, #event4{
+    #event1, #event2, #event3, #event4 {
         max-width: 550px !important;
     }
 
-    .img-ev{
+    .img-ev {
         width: 100% !important;
         height: auto;
     }
 
-    #img-logo-menu{
-        max-width: 100%!important;
+    #img-logo-menu {
+        max-width: 100% !important;
         text-align: center;
     }
 
-    #text-icons-menu{
+    #text-icons-menu {
         width: 49% !important;
         display: inline-block;
         float: left;
     }
 
-    #right-col{
+    #right-col {
         width: 39% !important;
         display: inline-block;
         float: left;
     }
 
-    #right-col-icon{
+    #right-col-icon {
         width: 10% !important;
         display: inline-block;
     }
 
-    #text-icons-menu, #text-icons-menu h2, #txt-menu{
+    #text-icons-menu, #text-icons-menu h2, #txt-menu {
         font-size: 3vw;
     }
 
-    #txt-menu{
+    #txt-menu {
         text-align: right;
     }
 
-    #hr-menu li img{
+    #hr-menu li img {
         max-width: 4vw;
         margin: 0.7vw;
     }
 
-    #menu-close{
+    #menu-close {
         max-width: 6vw;
         float: right;
         margin-top: 30vw;
     }
 
-    #footer-logo-col{
+    #footer-logo-col {
         width: 100% !important;
         text-align: center;
     }
 
-    #logo-footer{
+    #logo-footer {
         height: 12vw;
     }
 
-    #footer-p-col{
-       width:100% !important;
-       max-width: 100% !important;
-       text-align: center;
-    }
-
-    #footer-icons-col{
+    #footer-p-col {
         width: 100% !important;
         max-width: 100% !important;
         text-align: center;
     }
 
-    #adress-footer2, #adress-footer{
+    #footer-icons-col {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center;
+    }
+
+    #adress-footer2, #adress-footer {
         font-size: 3vw;
         text-align: center;
 
     }
 
-    #hr-footer img{
+    #hr-footer img {
         width: 3vw;
         height: auto;
         float: none;
         text-align: center;
     }
 
-    #hr-footer{
+    #hr-footer {
         float: none;
         text-align: center;
     }
 
-    #adress-footer2{
+    #adress-footer2 {
         margin-top: -4.5vw;
     }
 
-    #event-user-description, #event-user-photo{
+    #event-user-description, #event-user-photo {
         max-width: 100% !important;
         width: 100% !important;
     }
 
-    #description-txt{
+    #description-txt {
         font-size: 2.5vw;
     }
 
-    .p{
+    .p {
         font-size: 3vw;
     }
 }

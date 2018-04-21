@@ -175,6 +175,43 @@ $("#new-reg-btn2").on("click", function () {
     menuClose();
 });
 
+$("#search-input").keydown(function(event){
+    if(event.keyCode == 13){
+        $.ajax({
+                headers: {Accept: "application/json", "Content-Type": "application/json"},
+                type: "GET",
+                dataType: "json",
+                url: (BASE_URL + "/search" +"?text="+ $("#search-input").val()),
+                success: search_success,
+                error: search_error
+            });
+            $('#search-input').val('');
+
+        function search_success(data) {
+            hideBlurMain();
+            $(".blur").css('display', 'none');
+            search(data.events);
+        }
+
+        function search_error() {
+            $("#search").append("<div></div>").text("No matches");
+            showView("#search");
+        }
+
+        function  search(events) {
+            if(events.events==0){
+                $("#search").append("<div></div>").text("No matches found");
+                showViews(["#events","#search"]);
+            }
+            $("#second").empty();
+            loadEvents(events);
+            showViews(["#events","#second"]);
+            console.log(events)
+        }
+    }
+});
+
+
 $('#search-img').on('click', function () {
     $.ajax({
         headers: {Accept: "application/json", "Content-Type": "application/json"},

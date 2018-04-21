@@ -24,7 +24,9 @@
     <script defer src='Scripts/confirmPassword.js'></script>
     <script defer src='Scripts/ajaxRequestResponse.js'></script>
     <script defer type="text/babel" src="Scripts/main-react.js"></script>
+    <script defer type="text/babel" src="Scripts/main-react1.js"></script>
     <script defer src="Scripts/start-page.js"></script>
+
 </head>
 <body>
 <div id="back"></div>
@@ -40,7 +42,8 @@
     </div>
     <div class=" col-sm-3 " id="icons">
         <form id="search-form">
-            <p><input id="search-input" type="search" name="q" placeholder="Search">
+            <p><input class="no-submit" autocomplete="off" id="search-input" name="q" placeholder="Search">
+                <input type="text" name="sample1" style="display:none" />
                <img id="search-img" src="Images/search-tool.svg" style="cursor: pointer"></p>
         </form>
 
@@ -64,6 +67,13 @@
             <input id="confir-code" placeholder="Confirmation code">
             <button id="conf-code">Submit</button>
         </div>
+    </div>
+    <div class="blur1">
+        <div class="input-confirm1">
+            <p id="proceed">proceed paying</p>
+            <br><p id="proceed1">success</p>
+        </div>
+
     </div>
     <div class="row container-fluid" id="main">
         <div class="col-sm-3" id="calendar-upcoming">
@@ -155,6 +165,8 @@
                     document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function () {
                         Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) - 1);
 
+
+
                         // var datval=$("#thisMonthAndYear");
                         // console.log(datval.data("year")+"."+(datval.data("month")+1)+".")
                         // $('.contentDate tr td').on('click', function () {
@@ -184,9 +196,6 @@
                     // переключатель плюс месяц
                     document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function () {
                         Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) + 1);
-
-
-
                     }
 
                 </script>
@@ -197,14 +206,48 @@
             </div>
         </div>
         <div class="col-sm-9 " id="events-footer">
+
             <div class="container" id="events">
-                <div class="row container-fluid" id="first" style="margin-bottom: 1vw">
+                <div class="row container-fluid" id="success">
+                    <p class="caption-txt">SUCCESS</p>
+                    <br><p id="congrats">Congratulations! You've successfully payed.
+                    Your PDF ticket have been sent to your email. We wish you a pleasant time!</p>
+                    <br><p id="congrats1">Return to the main page</p>
+                </div>
+                <div class="row container-fluid" id="about" style="display: none">
+                    <p class="caption-txt">ABOUT US</p>
+                    <div  id="about_us">
+                        <div id="map"></div>
+                        <script>
+                            function initMap() {
+                                var uluru = {lat: 31.9123633, lng: 34.8047922};
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                    zoom: 15,
+                                    center: uluru
+                                });
+                                var marker = new google.maps.Marker({
+                                    position: uluru,
+                                    map: map
+                                });
+                            }
+                        </script>
+                        <script async defer
+                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYJHvaVUujelQ9Q9-8rrb6v25Dk7WidB8&callback=initMap">
+                        </script>
+                    </div>
+                </div>
+                <div class="row container-fluid" id="first">
                     <div class=" col-sm-9" id="events-p-text">
                         <p class="caption-txt">EVENTS</p>
                     </div>
                     <div id="tickets-p" style="display: none">
                         <p class="caption-txt">TICKETS</p>
                         <p class="p" id="ticket-info"></p>
+                    </div>
+                    <div id="cart-p" style="display: none">
+                        <p class="caption-txt">SHOPPING CART</p>
+                        <!--<br>-->
+                        <!--<p class="p" id="shopping-cart-info"></p>-->
                     </div>
 
                     <div class="col-sm-3 " id="events-drop-menu">
@@ -217,21 +260,21 @@
                         </div>
                     </div>
                 </div>
-                <!--<div class="" id="first1" style="margin-bottom: 1vw">-->
 
-                        <div class="clearfix"></div>
-
-
-                <!--</div>-->
                 <div class="clearfix"></div>
                 <!--//coderjimoe-->
                 <div class="row container-fluid" id="search"></div>
+                <div class="row container-fluid" id="data-search"></div>
                 <div class="row container-fluid" id="second"></div>
                 <div class="row container-fluid" id="second1"></div>
                 <div class="row container-fluid" id="second2"></div>
+                <div class="row container-fluid" id="second3"></div>
+
+
+
                 <div class="row container-fluid" id="calendar-filter"></div>
             </div>
-            <div class="row container-fluid" id="second3"></div>
+
             <div class="container" id="registration">
                 <div class="container" id="reg-p-text">
                     <p class="caption-txt">REGISTRATION</p>
@@ -344,10 +387,10 @@
                                 <div class="container-fluid-btn">
                                     <input required type="checkbox" id="ch-in-1">
                                     <div class=" container-fluid-p">
-                                        <p>I have read the notice on <span id="data-prot">data protection</span> and the
+                                        <p>I have read the notice on <span class="data-prot">data protection</span> and the
                                             content of
                                             the
-                                            <span id="stand-terms">Standart Terms of Business</span> and agree to the
+                                            <span class="data-prot">Standart Terms of Business</span> and agree to the
                                             storage of my
                                             personal data.</p>
                                     </div>
@@ -367,6 +410,7 @@
             </div>
 
             <div id="root"></div>
+            <div id="root1"></div>
 
             <div class="clearfix"></div>
             <div class="row container-fluid" id="footer">
@@ -376,8 +420,8 @@
                 <div class="col-sm-6 " id="footer-p-col" style="padding-left: 2vw">
                     <p id="adress-footer">
                         Tickets and Events
-                        <br>Freudstrasse 69, 10117 Berlin
                         <br>Plaut street 10, 76706 Rehovot Israel
+                        <br>Tel.: 08-9479977 , 054-5699350
                     </p>
                 </div>
                 <div class=" col-sm-3 " id="footer-icons-col">
@@ -404,14 +448,14 @@
     </div>
     <div class=" col-sm-6 " id="text-icons-menu">
         <h2>Events and Tickets</h2>
-        <ul id="hr-menu">
-            <li><a href="#"><img src="Images/menu-icons/youtube-logomenu.svg"></a></li>
-            <li><a href="#"><img src="Images/menu-icons/facebook-logomenu.svg"></a></li>
-            <li><a href="#"><img src="Images/menu-icons/twitter-logomenu.svg"></a></li>
-            <li><a href="#"><img src="Images/menu-icons/instagram-logomenu.svg"></a></li>
-            <li><a href="#"><img src="Images/menu-icons/odnoklassniki-logomenu.svg"></a></li>
-            <li><a href="#"><img src="Images/menu-icons/wi-fi-logomenu.svg"></a></li>
-        </ul>
+        <!--<ul id="hr-menu">-->
+            <!--<li><a href="#"><img src="Images/menu-icons/youtube-logomenu.svg"></a></li>-->
+            <!--<li><a href="#"><img src="Images/menu-icons/facebook-logomenu.svg"></a></li>-->
+            <!--<li><a href="#"><img src="Images/menu-icons/twitter-logomenu.svg"></a></li>-->
+            <!--<li><a href="#"><img src="Images/menu-icons/instagram-logomenu.svg"></a></li>-->
+            <!--<li><a href="#"><img src="Images/menu-icons/odnoklassniki-logomenu.svg"></a></li>-->
+            <!--<li><a href="#"><img src="Images/menu-icons/wi-fi-logomenu.svg"></a></li>-->
+        <!--</ul>-->
         <p id="adress-menu">
             <br>Tickets and Events
             <br>Plaut street 10, 76706 Rehovot Israel
@@ -425,7 +469,7 @@
             <li id="loginout-btn-menu">LOGIN/OUT</li>
             <li id="events-btn-menu">EVENTS</li>
             <li id="shoppingcart-btn-menu">SHOPPING CART</li>
-            <li id="hallsscheme-btn-menu">HALLS SCHEME</li>
+            <!--<li id="hallsscheme-btn-menu">HALLS SCHEME</li>-->
             <li id="aboutus-btn-menu">ABOUT US</li>
         </ul>
     </div>

@@ -186,11 +186,18 @@ function holle(rowHole) {
     }
 
     $('#second2').append($("<div class='col-sm-4' id='priceTicket'></div>"));
-    $("#priceTicket").append("<div style='margin-top: 3vw'></div>")
+    $("#priceTicket").append("<div style='margin-top: 3vw; display: inline-block'></div>")
         .append("<span></span>").text("Row Place");
 
+
     var ars = [];
-    $("#second3").append($("<div id='addKorz'></div>"));
+    $("#second3").append($("<p id='alert-txt'>The tickets shown here have now been reserved for you for 20 minutes.</p>"));
+    $("#second3").append($("<div class='clearfix'></div>"));
+    $("#second3").append($("<div class='row' id='addKorzina11' style='border: #868685 solid 1px'></div>"));
+    $("#addKorzina11").append($("<div class='col-sm-4' id='addKorz1'></div>"));
+    $("#addKorzina11").append($("<div class='col-sm-8' id='addKorz2'></div>"));
+    $("#addKorz1").append($("<div id='addKorz11'></div>"));
+    $("#addKorz11").append($("<div id='addKorz'></div>"));
     $('.mesta').on("click", function (e) {
 
         let taget = e.target;
@@ -248,12 +255,22 @@ function holle(rowHole) {
 
     });
     $(".zanatoMesto").unbind();
-    $('#priceTicket').append($('<div id="summary">summa zdes</div>'));
+    $('#priceTicket').append($('<div id="summary"></div>'));
 
     $("#priceTicket").append($("<div id='addKorzina'>TO THE CART</div>"));
     $('#addKorzina').on("click", function () {
 
-        $(".delete").css({"display": "none"});
+        // $(".delete").css({"display": "none"});
+        $("#addKorz1").append($("<div id='sshopping-cart-info'></div>"));
+        $('#sshopping-cart-info').text(rowHole.artist + "|" + rowHole.eventTitle + "|" + rowHole.date);
+        // $('#ticket-info').css({'display':'none'});
+        // $('#events').css({'display':'block'});
+        // showViews(["#events", "#cart-p", "#second2"]);
+        // $('#shopping-cart-info').empty();
+        // $('#shopping-cart-info').text(rowHole.artist + "|" + rowHole.eventTitle + "|" + rowHole.date);
+
+
+
         /*console.log(new Date().getMinutes())
         function deleteTicket() {
         $("#second3").empty()
@@ -264,11 +281,39 @@ function holle(rowHole) {
         /* let p3 = $("<p style='display: inline-block;'></p>").text(rowHole.artist + '-');*/
 
 
-        var arrs = []
-        $("#addKorz").append($(".mestoZanato"))
+        var arrs = [];
+        // $("#addKorz").append("<div style='margin-top: 3vw; display: inline-block'></div>")
+        //     .append("<span></span>").text("Row Place");
+        // var counter2 = 0;
+        // for (let i = 0; i < ($('.mestoZanato')).length; i++) {
+        //     counter2 += $(MestoZanaqto[i]).data('price')
+        // }
+        //
+        // $('#summary').text(counter2);
+        //
+        //
+        // $(".delete").on("click", function () {
+        //     var arrS = [];
+        //     for (let i = 0; i < $(".delete").length; i++) {
+        //         arrS[i] = $(".delete")[i]
+        //     }
+        //     $(this).closest(".mestoZanato").remove();
+        //     var counter1 = 0;
+        //     for (let i = 0; i < ($('.mestoZanato')).length; i++) {
+        //         counter1 += $(MestoZanaqto[i]).data('price')
+        //     }
+        //
+        //     $('#summary').text(counter2);
+        //
+        //     /*console.log(arrS.indexOf(this))*/
+        //     taget.classList.remove("zanato")[arrS]
+        // })
+
+        $("#addKorz").append($(".mestoZanato"));
+        // $('#addKorz').append($('<div id="summary"></div>'));
 
 
-        var mestZ = document.getElementsByClassName("mestoZanato")
+        var mestZ = document.getElementsByClassName("mestoZanato");
 
         for (let i = 0; i < mestZ.length; i++) {
             arrs[i] = $(mestZ[i]).data("id")
@@ -295,25 +340,37 @@ function holle(rowHole) {
         })
 
         function eventsa_success(data) {
-
-            console.log(data)
             sucsesfulTickets(data)
         }
 
-        showViews(["#second3"]);
+        // showViews(["#second3"]);
+        showViews(["#events", "#cart-p", "#second3"]);
 
 
     });
-    $('#addKorz').append("<div id='btn-oplata'>Kypit</div>");
+    $('#addKorz').append("<div id='btn-oplata'>PAY</div>");
+
+    $('#addKorz2').append("<div id='terms-and-cond1' style='position: absolute; bottom: 0; right: 3vw;'></div>");
+    $('#addKorz2').append("<div id='delete-section' style='position: absolute;top: 2vw; right: 3vw;color: #ffc800; font-family: FuturaFuturisC-Bold; cursor: pointer;'>Delete section</div>");
+    $('#terms-and-cond1').append("<input type='checkbox' checked='checked' required id='terms-and-cond11' style='display: inline-block; margin: 0.3vw 0.5vw 2vw 0; float: left;'>");
+    $('#terms-and-cond1').append("<p style='display: inline-block; font-family: FuturaFuturisLightC; color: #868685; font-size: 1vw;'>I have read <span class='data-prot1'>The Terms and Conditions</span> and fully agree with them</p>");
+    $("#delete-section").on("click",function () {
+        $("#second3").empty();
+    });
+
+    $(".data-prot1").on("click",function () {
+        showView("#root1");
+    });
+
 
     function sucsesfulTickets(IdZakaz) {
 
 
         $("#btn-oplata").on("click", function () {
-            $('#addKorz').append("<input type='text' id='mail'>")
-            $('#addKorz').append("<div id='addmail'>Confirm Email</div>")
+            $('#addKorz').append("<input type='email' id='mail' placeholder='Enter your email'>")
+            $('#addKorz').append("<div id='addmail'>Confirm Email</div>");
             $("#addmail").on("click", function () {
-
+                $("#btn-oplata").css('display', 'none');
                 $.ajax({
                     headers: {Accept: "application/json", "Content-Type": "application/json"},
                     type: "GET",
@@ -323,11 +380,11 @@ function holle(rowHole) {
                     success: eventsa_successw,
                 })
 
-            })
+            });
 
 
             function eventsa_successw(data) {
-                console.log(data)
+                console.log(data);
                 $.ajax({
                     headers: {Accept: "application/json", "Content-Type": "application/json"},
                     type: "GET",
@@ -336,11 +393,14 @@ function holle(rowHole) {
 
                     success: eventsas,
 
-                })
+                });
 
                 function eventsas(data) {
-                    $("#addKorz").empty()
-                    showViews(["#second", "#events"]);
+                    // $('#addKorz2').empty();
+                    // $("#addKorz1").empty();
+                    // showViews(["#second", "#events"]);
+                    blurMain();
+                    $(".blur1").css('display', 'flex');
                 }
 
             }
@@ -395,36 +455,47 @@ function loadUpcomingEvents(events) {
     }
 }
 
-function showCalendarEvents(events) {
 
-}
-
-
-/*
 $('.contentDate tr td').on('click', function () {
     var datval = $("#thisMonthAndYear");
+    var month_this = datval.data("month");
+    var day_this = parseInt(this.textContent) ;
+    var seconda = Date.parse(datval.data("year") + "." + (month_this +1)+ "." + (day_this + 1));
 
-    var second = Date.parse(datval.data("year") + "." + datval.data("month") + "." + this.textContent) / 1000;
+    console.log(datval.data("year") + "." + datval.data("month") + "." + (day_this + 1));
 
-    console.log(datval.data("year") + "." + datval.data("month") + "." + this.textContent)
-
-    /!*
           $.ajax({
               headers: {Accept: "application/json", "Content-Type": "application/json"},
               type: "GET",
               dataType: "json",
-              url: (BASE_URL + "/events/on/date" + "?date=" + seconwd),
+              url: (BASE_URL + "/events/on/date" + "?date=" + seconda),
               success: cal_success,
               error: cal_error
           })
           ;
           function cal_success(data) {
+              hideBlurMain();
+              $(".blur").css('display', 'none');
+              data_search(data.events);
               console.log(data);
 
           }
 
           function cal_error() {
-              alert("error")
+              $("#data-search").append("<div></div>").text("No matches");
+              showView("#data-search");
           }
-    });*!/
-})*/
+
+    function  data_search(events) {
+        if(events.events==0){
+            $("#data-search").append("<div></div>").text("No matches found");
+            showViews(["#events","#data-search"]);
+        }
+        $("#second").empty();
+        loadEvents(events);
+        showViews(["#events","#second"]);
+        console.log(events)
+    }
+});
+
+
